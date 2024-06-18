@@ -35,10 +35,10 @@ class AcmemodaApplicationTests {
 		List<Cliente> resultadoSelect = clienteServicio.listarCliente();
 
 		Pedido nuevoPedido = new Pedido();
-		nuevoPedido.setFecha(null);
+		nuevoPedido.setFecha(new Date());
 		nuevoPedido.setFkCliente(nuevoCliente);
 		pedidoServicio.insertarPedido(nuevoPedido);
-		
+
 	}
 
 }
