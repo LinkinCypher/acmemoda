@@ -10,8 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Data
@@ -20,15 +18,12 @@ import lombok.Data;
 public class Pedido implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPedido;
-	private boolean estado;
-
-	@Temporal(TemporalType.DATE)
 	private Date fecha;
-
+    private boolean estado;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_Cliente")
 	private Cliente fkCliente;
