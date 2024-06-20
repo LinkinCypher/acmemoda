@@ -37,4 +37,44 @@ public class ClienteServicioImpl implements IClienteServicio {
 		}
 	}
 
+	@Override
+	public Cliente buscarClienteId(String cedula) {
+		try {
+            return clienteRepositorio.buscarClienteId(cedula);
+        } catch (Exception e) {
+            System.out.println("Error al buscar por cédula");
+            return null;
+        }
+	}
+
+	@Override
+	public List<Cliente> findByNombre(String nombre) {
+		try {
+            return clienteRepositorio.findByNombre(nombre);
+        } catch (Exception e) {
+            System.out.println("Error al buscar por nombre");
+            return null;
+        }
+	}
+
+	@Override
+	public List<Cliente> findByApellido(String apellido) {
+		try {
+            return clienteRepositorio.findByApellido(apellido);
+        } catch (Exception e) {
+            System.out.println("Error al buscar por apellido");
+            return null;
+        }
+	}
+
+	@Override
+	public List<Cliente> buscarPorFecha(int anioInicio, int anioFin) {
+		try {
+            return clienteRepositorio.buscarPorFechas(anioInicio,anioFin);
+        } catch (Exception e) {
+            System.out.println("Error al buscar por fecha");
+            return null;
+        }
+	}
+
 }
