@@ -27,7 +27,7 @@ class AcmemodaApplicationTests {
 		nuevoCliente.setNombre("Cristhian");
 		nuevoCliente.setApellido("Mora");
 		nuevoCliente.setTelefono("1234567890");
-		nuevoCliente.setCi("0987654321");
+		nuevoCliente.setCedulaIdentidad("0987654321");
 		nuevoCliente.setCorreo("cristhian@mail.com");
 		nuevoCliente.setDireccion("Quito");
 		clienteServicio.insertarCliente(nuevoCliente);

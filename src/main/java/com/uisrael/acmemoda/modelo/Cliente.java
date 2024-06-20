@@ -31,9 +31,10 @@ public class Cliente implements Serializable {
 	private String correo;
 	private String direccion;
 	private boolean estado;
+	private Date fechaNacimiento;
 
 	@Column(name = "cedula", length = 15)
-	private String ci;
+	private String cedulaIdentidad;
 
 	@Column(length = 10)
 	private String telefono;
