@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Cliente</title>
+    <title>Pedido</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -182,22 +182,22 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
+                                        <a href="user-profile">
                                             <i class="ti-user"></i> Perfil
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="email-inbox.html">
+                                        <a href="email-inbox">
                                             <i class="ti-email"></i> Mis Mensajes
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="auth-lock-screen.html">
+                                        <a href="auth-lock-screen">
                                             <i class="ti-lock"></i> Bloquear pantalla
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="auth-normal-sign-in.html">
+                                        <a href="ingreso">
                                             <i class="ti-layout-sidebar-left"></i> Salir
                                         </a>
                                     </li>
@@ -223,9 +223,9 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="user-profile.html"><i class="ti-user"></i>Ver Perfil</a>
+                                            <a href="user-profile"><i class="ti-user"></i>Ver Perfil</a>
                                             <a href="#!"><i class="ti-settings"></i>Configuración</a>
-                                            <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Salir</a>
+                                            <a href="ingreso"><i class="ti-layout-sidebar-left"></i>Salir</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -251,33 +251,40 @@
                             </ul>
                             
                             
-                            <div class="pcoded-navigation-label">Pages</div>
+                            <div class="pcoded-navigation-label">Páginas</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu active pcoded-trigger">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
-                                        <span class="pcoded-mtext">Pages</span>
+                                        <span class="pcoded-mtext">Páginas</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class="">
-                                            <a th:href="@{/auth-normal-sign-in}" class="waves-effect waves-dark">
+                                            <a th:href="@{/ingreso}" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Login</span>
+                                                <span class="pcoded-mtext">Ingreso</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="auth-sign-up" class="waves-effect waves-dark">
+                                            <a href="registro" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Registration</span>
+                                                <span class="pcoded-mtext">Registro</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="usuario" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+                                                <span class="pcoded-mtext">Usuario</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class="active">
-                                            <a href="cliente" class="waves-effect waves-dark">
+                                            <a href="pedido" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Cliente</span>
+                                                <span class="pcoded-mtext">Pedido</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -293,7 +300,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Cliente</h5>
+                                            <h5 class="m-b-10">Pedido</h5>
                                             <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
                                         </div>
                                     </div>
@@ -302,7 +309,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="index"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Cliente</a>
+                                            <li class="breadcrumb-item"><a href="#!">Pedido</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -318,7 +325,7 @@
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Cliente</h5>
+                                                        <h5>Pedido</h5>
                                                         <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                                                         <div class="card-header-right">
                                                             <ul class="list-unstyled card-option">
