@@ -22,13 +22,28 @@ public class ClienteControlador {
     }
     
     @GetMapping("/usuario")
-	public String verCliente() {
-		return "/material/usuario";
+	public String verCliente() { 
+		return "/material/usuario";  // Thymeleaf buscará index en src/main/resources/templates
 	}
     
     @GetMapping("/pedido")
     public String verPedido() {
         return "/material/pedido"; // Thymeleaf buscará index en src/main/resources/templates
+    }
+    
+    @GetMapping("/detallePedido")
+    public String verDetallePedido() {
+        return "/material/detallePedido"; // Thymeleaf buscará index en src/main/resources/templates
+    }
+    
+    @GetMapping("/categoria")
+    public String verCategoria() {
+        return "/material/categoria"; // Thymeleaf buscará index en src/main/resources/templates
+    }
+    
+    @GetMapping("/producto")
+    public String verProducto() {
+        return "/material/producto"; // Thymeleaf buscará index en src/main/resources/templates
     }
 
 }
