@@ -1,11 +1,9 @@
 package com.uisrael.acmemoda.modelo;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,27 +14,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_cliente")
-public class Cliente implements Serializable {
+@Table(name = "tb_categoria")
+public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCliente;
+	private int idCategoria;
 	private String nombre;
-	private String apellido;
-	private String correo;
-	private String direccion;
+	private String descripcion;
 	private boolean estado;
-	private Date fechaNacimiento;
-
-	@Column(name = "cedula", length = 15)
-	private String cedulaIdentidad;
-
-	@Column(length = 10)
-	private String telefono;
-
-	@OneToMany(mappedBy = "fkCliente")
-	private List<Pedido> listaPedidos = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "fkCategoria")
+	private List<Producto> listaProducto = new ArrayList<>();
 }
