@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_pedido")
+@Table(name = "tb_producto")
 
 public class Producto implements Serializable {
 	
@@ -30,5 +30,5 @@ public class Producto implements Serializable {
     
     @ManyToOne
 	@JoinColumn(name = "id_Categoria")
-	private Cliente fkCategoria;
+	private Categoria fkCategoria;
 }
