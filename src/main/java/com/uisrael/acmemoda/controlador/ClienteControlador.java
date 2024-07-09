@@ -1,7 +1,14 @@
 package com.uisrael.acmemoda.controlador;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.uisrael.acmemoda.modelo.Cliente;
+import com.uisrael.acmemoda.servicio.IClienteServicio;
 
 @Controller
 public class ClienteControlador {
@@ -9,7 +16,7 @@ public class ClienteControlador {
 	// INGRESO
 	@GetMapping("/ingreso")
     public String verLogin() {
-        return "/material/ingreso"; // Thymeleaf buscará auth-normal-sign-in en src/main/resources/templates
+        return "/material/ingreso";
     }
 	
 	
@@ -25,15 +32,20 @@ public class ClienteControlador {
 	//REGISTRO CLIENTE
     @GetMapping("/registro")
     public String verRegistro() {
-        return "/material/registro"; // Thymeleaf buscará auth-sign-up en src/main/resources/templates
+        return "/material/registro";
     }
     
     
 
     // CLIENTE - LISTAR
+    @Autowired
+    public IClienteServicio servicioCliente;
+    
     @GetMapping("/cliente")
-	public String verCliente() { 
-		return "/material/cliente";  // Thymeleaf buscará index en src/main/resources/templates
+	public String verCliente(Model model) { 
+    	List<Cliente> verCliente = servicioCliente.listarCliente(); //recuperar información de la BD
+    	model.addAttribute("lista", verCliente);
+		return "/material/cliente";
 	}
     
     
@@ -41,14 +53,14 @@ public class ClienteControlador {
     // PEDIDO
     @GetMapping("/pedido")
     public String verPedido() {
-        return "/material/pedido"; // Thymeleaf buscará index en src/main/resources/templates
+        return "/material/pedido";
     }
     
     
     // DETALLE
     @GetMapping("/detalle")
     public String verDetalle() {
-        return "/material/detalle"; // Thymeleaf buscará index en src/main/resources/templates
+        return "/material/detalle";
     }
     
     
@@ -56,7 +68,7 @@ public class ClienteControlador {
     // CETEGORIA
     @GetMapping("/categoria")
     public String verCategoria() {
-        return "/material/categoria"; // Thymeleaf buscará index en src/main/resources/templates
+        return "/material/categoria";
     }
     
     
@@ -64,7 +76,7 @@ public class ClienteControlador {
     // PRODUCTO
     @GetMapping("/producto")
     public String verProducto() {
-        return "/material/producto"; // Thymeleaf buscará index en src/main/resources/templates
+        return "/material/producto";
     }
     
     
