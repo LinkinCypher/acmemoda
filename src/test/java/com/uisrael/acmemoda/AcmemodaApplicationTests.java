@@ -11,10 +11,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.uisrael.acmemoda.modelo.Categoria;
 import com.uisrael.acmemoda.modelo.Cliente;
+import com.uisrael.acmemoda.modelo.Detalle;
 import com.uisrael.acmemoda.modelo.Pedido;
 import com.uisrael.acmemoda.modelo.Producto;
 import com.uisrael.acmemoda.servicio.ICategoriaServicio;
 import com.uisrael.acmemoda.servicio.IClienteServicio;
+import com.uisrael.acmemoda.servicio.IDetalleServicio;
 import com.uisrael.acmemoda.servicio.IPedidoServicio;
 import com.uisrael.acmemoda.servicio.IProductoServicio;
 
@@ -29,6 +31,8 @@ class AcmemodaApplicationTests {
 	ICategoriaServicio categoriaServicio;
 	@Autowired
 	IProductoServicio productoServicio;
+	@Autowired
+	IDetalleServicio detalleServicio;
 
 	@Test
 	void contextLoads() {
@@ -56,7 +60,7 @@ class AcmemodaApplicationTests {
 
 		
 
-		// INSERTAR PEDIDO
+		// INSERTAR PEDIDO (CLIENTE -> PEDIDO)
 		Pedido nuevoPedido = new Pedido();
 		nuevoPedido.setFecha(new Date());
 		nuevoPedido.setFkCliente(nuevoCliente);
@@ -72,13 +76,22 @@ class AcmemodaApplicationTests {
 		
 		
 		
-		// INSERTAR PRODUCTO
+		// INSERTAR PRODUCTO (CATEGORIA -> PRODUCTO)
 		Producto nuevoProducto = new Producto();
 		nuevoProducto.setNombre("Camisa");
 		nuevoProducto.setDescripcion("Talla G");
 		nuevoProducto.setStock("2");
 		nuevoProducto.setFkCategoria(nuevoCategoria);
 		productoServicio.insertarProducto(nuevoProducto);
+		
+		
+		
+		// INSERTAR DETALLE (PEDIDO -> DETALLE && PRODUCTO -> DETALLE)
+		Detalle nuevoDetalle = new Detalle();
+		nuevoDetalle.setCantidad(10);
+		nuevoDetalle.setFkPedido(nuevoPedido);
+		nuevoDetalle.setFkProducto(nuevoProducto);
+		detalleServicio.insertarDetalle(nuevoDetalle);
 		
 		
 		
