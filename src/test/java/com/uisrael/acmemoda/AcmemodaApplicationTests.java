@@ -9,10 +9,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.uisrael.acmemoda.modelo.Categoria;
 import com.uisrael.acmemoda.modelo.Cliente;
 import com.uisrael.acmemoda.modelo.Pedido;
+import com.uisrael.acmemoda.modelo.Producto;
+import com.uisrael.acmemoda.servicio.ICategoriaServicio;
 import com.uisrael.acmemoda.servicio.IClienteServicio;
 import com.uisrael.acmemoda.servicio.IPedidoServicio;
+import com.uisrael.acmemoda.servicio.IProductoServicio;
 
 @SpringBootTest
 class AcmemodaApplicationTests {
@@ -21,12 +25,16 @@ class AcmemodaApplicationTests {
 	IClienteServicio clienteServicio;
 	@Autowired
 	IPedidoServicio pedidoServicio;
+	@Autowired
+	ICategoriaServicio categoriaServicio;
+	@Autowired
+	IProductoServicio productoServicio;
 
 	@Test
 	void contextLoads() {
 
 		
-		/*
+		
 		// INSERTAR CLIENTE
 		Cliente nuevoCliente = new Cliente();
 		nuevoCliente.setNombre("Cristhian");
@@ -53,7 +61,24 @@ class AcmemodaApplicationTests {
 		nuevoPedido.setFecha(new Date());
 		nuevoPedido.setFkCliente(nuevoCliente);
 		pedidoServicio.insertarPedido(nuevoPedido);
-		 */
+		
+		
+		
+		// INSERTAR CATEGORIA
+		Categoria nuevoCategoria = new Categoria();
+		nuevoCategoria.setNombre("Damas");
+		nuevoCategoria.setDescripcion("Ropa para damas");
+		categoriaServicio.insertarCategoria(nuevoCategoria);
+		
+		
+		
+		// INSERTAR PRODUCTO
+		Producto nuevoProducto = new Producto();
+		nuevoProducto.setNombre("Camisa");
+		nuevoProducto.setDescripcion("Talla G");
+		nuevoProducto.setStock("2");
+		nuevoProducto.setFkCategoria(nuevoCategoria);
+		productoServicio.insertarProducto(nuevoProducto);
 		
 		
 		
