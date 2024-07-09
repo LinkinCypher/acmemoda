@@ -21,9 +21,9 @@ public class ClienteControlador {
         return "/material/index"; // Thymeleaf buscará index en src/main/resources/templates
     }
     
-    @GetMapping("/usuario")
+    @GetMapping("/cliente")
 	public String verCliente() { 
-		return "/material/usuario";  // Thymeleaf buscará index en src/main/resources/templates
+		return "/material/cliente";  // Thymeleaf buscará index en src/main/resources/templates
 	}
     
     @GetMapping("/pedido")
@@ -31,9 +31,9 @@ public class ClienteControlador {
         return "/material/pedido"; // Thymeleaf buscará index en src/main/resources/templates
     }
     
-    @GetMapping("/detallePedido")
-    public String verDetallePedido() {
-        return "/material/detallePedido"; // Thymeleaf buscará index en src/main/resources/templates
+    @GetMapping("/detalle")
+    public String verDetalle() {
+        return "/material/detalle"; // Thymeleaf buscará index en src/main/resources/templates
     }
     
     @GetMapping("/categoria")
