@@ -6,30 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.uisrael.acmemoda.modelo.Pedido;
-import com.uisrael.acmemoda.repositorio.IPedidoRepositorio;
-import com.uisrael.acmemoda.servicio.IPedidoServicio;
+import com.uisrael.acmemoda.modelo.Producto;
+import com.uisrael.acmemoda.repositorio.IProductoRepositorio;
+import com.uisrael.acmemoda.servicio.IProductoServicio;
 
 @Service
 @Component
-public class PedidoServicioImpl implements IPedidoServicio{
+public class ProductoServicioImpl implements IProductoServicio{
 
 	@Autowired
-	IPedidoRepositorio pedidoRepositorio;
+	IProductoRepositorio productoRepositorio;
 	
 	@Override
-	public void insertarPedido(Pedido nuevoPedido) {
+	public void insertarProducto(Producto nuevoProducto) {
 		try {
-			pedidoRepositorio.save(nuevoPedido);
+			productoRepositorio.save(nuevoProducto);
 		} catch (Exception e) {
 			System.out.println("Error al ingresar datos");
 		}
 	}
 
 	@Override
-	public List<Pedido> listartPedidos() {
+	public List<Producto> listarProducto() {
 		try {
-			return pedidoRepositorio.findAll();
+			return productoRepositorio.findAll();
 		} catch (Exception e) {
 			System.out.println("Error al listar los datos");
 			return null;
