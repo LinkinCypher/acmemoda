@@ -351,7 +351,12 @@
 													
 													
 													
-													<form class="form-material">
+													<form 
+														th:action="@{/insertarcliente}" 
+														th:object="${nuevoCliente}"
+														class="form-material"
+														method="post"
+													>
 														<div class="card-block tooltip-icon button-list">
 	                                                        
 															<div class="input-group">
@@ -360,6 +365,7 @@
 																		placeholder="Nombre" 
 																		title="Ingrese el nombre" 
 																		data-toggle="tooltip"
+																		th:field="*{nombre}"
 																		required>
 	                                                        </div>
 															
@@ -368,7 +374,8 @@
 																		class="form-control" 
 																		placeholder="Apellido" 
 																		title="Ingrese el apellido" 
-																		data-toggle="tooltip" 
+																		data-toggle="tooltip"
+																		th:field="*{apellido}"
 																		required>
 	                                                        </div>
 															
@@ -377,7 +384,8 @@
 																		class="form-control" 
 																		placeholder="Correo" 
 																		title="Ingrese el correo electrónico" 
-																		data-toggle="tooltip" 
+																		data-toggle="tooltip"
+																		th:field="*{correo}"
 																		required>
 	                                                        </div>
 															
@@ -386,7 +394,8 @@
 																		class="form-control" 
 																		placeholder="Dirección de domicilio" 
 																		title="Ingrese la dirección de domicilio" 
-																		data-toggle="tooltip" 
+																		data-toggle="tooltip"
+																		th:field="*{direccion}"
 																		required>
 	                                                        </div>
 															
@@ -395,7 +404,8 @@
 																		class="form-control" 
 																		placeholder="Fecha de nacimiento" 
 																		title="Ingrese la fecha de nacimiento" 
-																		data-toggle="tooltip" 
+																		data-toggle="tooltip"
+																		th:field="*{fechaNacimiento}"
 																		required>
 	                                                        </div>
 															
@@ -404,7 +414,8 @@
 																		class="form-control" 
 																		placeholder="Cédula de identidad" 
 																		title="Ingrese la cédula de identidad" 
-																		data-toggle="tooltip" 
+																		data-toggle="tooltip"
+																		th:field="*{cedulaIdentidad}"
 																		required>
 	                                                        </div>
 															
@@ -413,22 +424,17 @@
 																		class="form-control" 
 																		placeholder="Teléfono" 
 																		title="Ingrese el número de teléfono" 
-																		data-toggle="tooltip" 
+																		data-toggle="tooltip"
+																		th:field="*{telefono}"
 																		required>
 	                                                        </div>
+					                                        <div class="checkbox-fade fade-in-primary">
+				                                                <input type="checkbox" value="" th:field="*{estado}">
+				                                                <span class="text-inverse">Estado</span>
+					                                        </div>
+							                                    
+	                                                        <hr>
 															
-															<div class="row m-t-25 text-left">
-							                                    <div class="col-md-12">
-							                                        <div class="checkbox-fade fade-in-primary">
-							                                            <label>
-							                                                <input type="checkbox" value="">
-							                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-							                                                <span class="text-inverse">Estado</span>
-							                                            </label>
-							                                        </div>
-							                                    </div>
-							                                </div>
-	                                                        
 															<div class="notifications">           
 		                                                        <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
 																	<i class="fa fa-save"></i>

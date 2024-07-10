@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.uisrael.acmemoda.modelo.Cliente;
 import com.uisrael.acmemoda.servicio.IClienteServicio;
@@ -15,13 +17,13 @@ public class ClienteControlador {
 	
   
 	
-
+	// CLIENTE
     @Autowired
     public IClienteServicio servicioCliente;
     
     @GetMapping("/registro")
     public String crearCliente(Model model) {
-    	model.addAttribute("nuevoCliente", new Cliente()); //nuevo registro
+    	model.addAttribute("nuevoCliente", new Cliente()); //registro
         return "/material/registro";
     }
     
@@ -32,6 +34,12 @@ public class ClienteControlador {
     	model.addAttribute("lista", listaClientes);
 		return "/material/listacliente";  //ruta de la pagina
 	}
+    
+    @PostMapping("/insertarcliente")
+    public String guardarcliente(@ModelAttribute("nuevoCliente") Cliente nuevoCliente) {
+    	servicioCliente.insertarCliente(nuevoCliente);
+    	return "redirect:/listarclientes";
+    }
     
     
 
