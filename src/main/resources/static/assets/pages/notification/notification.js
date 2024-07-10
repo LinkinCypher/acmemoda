@@ -26,7 +26,7 @@ $(window).on('load',function(){
     };
 
    
-        notify('Welcome to Notification page', 'inverse');
+        notify('Bienvenido al Registro de Clientes', 'inverse');
    
 });
 
@@ -41,8 +41,8 @@ $(document).ready(function() {
     function notify(from, align, icon, type, animIn, animOut){
         $.growl({
             icon: icon,
-            title: ' Bootstrap Growl ',
-            message: 'Turning standard Bootstrap alerts into awesome notifications',
+            title: ' ACMEMODA: ',
+            message: 'Acción realizada',
             url: ''
         },{
             element: 'body',
