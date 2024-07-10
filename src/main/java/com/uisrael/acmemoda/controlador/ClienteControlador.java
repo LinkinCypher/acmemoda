@@ -21,8 +21,8 @@ public class ClienteControlador {
     @Autowired
     public IClienteServicio servicioCliente;
     
-    @GetMapping("/registro")
-    public String crearCliente(Model model) {
+    @GetMapping("/nuevocliente")
+    public String crearClientes(Model model) {
     	model.addAttribute("nuevoCliente", new Cliente()); //registro
         return "/material/registro";
     }
@@ -38,7 +38,7 @@ public class ClienteControlador {
     @PostMapping("/insertarcliente")
     public String guardarcliente(@ModelAttribute("nuevoCliente") Cliente nuevoCliente) {
     	servicioCliente.insertarCliente(nuevoCliente);
-    	return "redirect:/listarclientes";
+    	return "redirect:/registro";
     }
     
     
