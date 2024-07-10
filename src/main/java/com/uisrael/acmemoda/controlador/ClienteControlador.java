@@ -18,20 +18,13 @@ public class ClienteControlador {
     public String verLogin() {
         return "/material/ingreso";
     }
-	
-	
-	
-	// INDEX - DASHBOARD
-    @GetMapping("/index")
-    public String verIndex() {
-        return "/material/index"; // Thymeleaf buscará index en src/main/resources/templates
-    }
     
     
-    
+	
 	//REGISTRO CLIENTE
     @GetMapping("/registro")
-    public String verRegistro() {
+    public String verRegistro(Model model) {
+    	model.addAttribute("nuevoCliente", new Cliente()); //nuevo registro
         return "/material/registro";
     }
     
