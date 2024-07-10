@@ -241,9 +241,9 @@
                                             </a>
                                         </li>
                                         <li class="active">
-                                            <a href="cliente" class="waves-effect waves-dark">
+                                            <a href="listarclientes" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Cliente</span>
+                                                <span class="pcoded-mtext">Lista Clientes</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -316,10 +316,12 @@
                                                         <span>Aquí puedes administrar la información de todos nuestros clientes de manera eficiente y segura. Utiliza esta página para agregar nuevos clientes, actualizar detalles existentes o eliminar registros de clientes que ya no sean necesarios.</span>
 														
 														<br>
-														<button class="btn btn-primary btn-xs waves-effect waves-light" data-align="center">
-															<i class="fa fa-user-circle"></i>
-															Crear nuevo cliente
-														</button>
+															<span>
+																<a th:href="@{/registro}" class="btn btn-primary btn-xs waves-effect waves-light" data-align="center">
+																	<i class="fa fa-user-circle"></i>
+																	Crear nuevo cliente
+																</a>
+															</span>
 														
 														<div class="card-header-right">
                                                             <ul class="list-unstyled card-option">

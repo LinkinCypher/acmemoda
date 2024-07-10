@@ -13,33 +13,34 @@ import com.uisrael.acmemoda.servicio.IClienteServicio;
 @Controller
 public class ClienteControlador {
 	
-	// INGRESO
-	@GetMapping("/ingreso")
-    public String verLogin() {
-        return "/material/ingreso";
-    }
-    
-    
+  
 	
-	//REGISTRO CLIENTE
+
+    @Autowired
+    public IClienteServicio servicioCliente;
+    
     @GetMapping("/registro")
-    public String verRegistro(Model model) {
+    public String crearCliente(Model model) {
     	model.addAttribute("nuevoCliente", new Cliente()); //nuevo registro
         return "/material/registro";
     }
     
     
-
-    // CLIENTE - LISTAR
-    @Autowired
-    public IClienteServicio servicioCliente;
-    
-    @GetMapping("/cliente")
-	public String verCliente(Model model) { 
-    	List<Cliente> verCliente = servicioCliente.listarCliente(); //recuperar información de la BD
-    	model.addAttribute("lista", verCliente);
-		return "/material/cliente";
+    @GetMapping("/listarclientes")
+	public String listarClientes(Model model) { 
+    	List<Cliente> listaClientes = servicioCliente.listarCliente(); //recuperar información de la BD
+    	model.addAttribute("lista", listaClientes);
+		return "/material/listacliente";  //ruta de la pagina
 	}
+    
+    
+
+    
+    
+    
+    
+    
+    
     
     
     
