@@ -195,25 +195,26 @@
 																		th:field="*{direccion}"
 																		required>
 	                                                        </div>
-															
-															<!--  
+															  
 															<div class="input-group">
 	                                                            <input 	type="date" 
 																		class="form-control" 
 																		placeholder="Fecha de nacimiento" 
 																		title="Ingrese la fecha de nacimiento" 
 																		data-toggle="tooltip"
-																		<!-- th:field="*{fechaNacimiento}" 
+																		th:field="*{fechaNacimiento}" 
 																		required>
 	                                                        </div>
-	                                                        -->
 															
 															<div class="input-group">
 	                                                            <input 	type="text" 
 																		class="form-control" 
 																		placeholder="Cédula de identidad" 
-																		title="Ingrese la cédula de identidad" 
+																		title="Ingrese la cédula de identidad (10 números)" 
 																		data-toggle="tooltip"
+																		maxlength="10"
+															           	pattern="\d{10}"
+															           	oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
 																		th:field="*{cedulaIdentidad}"
 																		required>
 	                                                        </div>
@@ -222,8 +223,11 @@
 	                                                            <input 	type="text" 
 																		class="form-control" 
 																		placeholder="Teléfono" 
-																		title="Ingrese el número de teléfono" 
+																		title="Ingrese el número de teléfono (10 números)" 
 																		data-toggle="tooltip"
+																		maxlength="10"
+															           	pattern="\d{10}"
+															           	oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
 																		th:field="*{telefono}"
 																		required>
 	                                                        </div>
