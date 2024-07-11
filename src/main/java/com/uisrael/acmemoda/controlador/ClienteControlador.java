@@ -19,6 +19,17 @@ public class ClienteControlador {
 	
   
 	
+	
+	// INDEX
+    @GetMapping("/index")
+    public String verIndex() {
+        return "/material/index";
+    }
+    
+    
+    
+    
+    
 	// CLIENTE
     @Autowired
     public IClienteServicio servicioCliente;
@@ -71,6 +82,9 @@ public class ClienteControlador {
     }
     
     
+    
+    
+    
     // DETALLE
     @GetMapping("/detalle")
     public String verDetalle() {
@@ -79,11 +93,15 @@ public class ClienteControlador {
     
     
     
+    
+    
     // CETEGORIA
     @GetMapping("/categoria")
     public String verCategoria() {
         return "/material/categoria";
     }
+    
+    
     
     
     

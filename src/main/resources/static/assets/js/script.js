@@ -228,4 +228,4 @@ function toggleFullScreen() {
     }
 }
 
-$("body").append('<div class="fixed-button active"><a href="https://www.facebook.com/LinkinCypher" target="_blank" class="btn btn-md btn-primary"><i class="fa fa-facebook" aria-hidden="true"></i> Cristhian Mora</a> </div>');var $window=$(window),nav=$(".fixed-button");
+$("body").append('<div class="fixed-button active"><a href="https://www.facebook.com/ACMEMODA" target="_blank" class="btn btn-md btn-primary"><i class="fa fa-facebook" aria-hidden="true"></i> acmeMODA</a> </div>');var $window=$(window),nav=$(".fixed-button");

@@ -5,24 +5,24 @@
 	layout:decorate="~{plantillaTema/header}">
 
 <head>
-    <title>Pedido</title>
+    <title>Index</title>
 </head>
 
 <body>
 	<!-- PLANTILLA RELOAD -->
-    <div th:replace="plantillaTema/preloader :: div"></div>
-			
+	<div th:replace="plantillaTema/preloader :: div"></div>
+		
     <!-- Pre-loader end -->
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-            
+			
 			<!-- PLANTILLA BARRA DE NAVEGACIÓN SUPERIOR -->
             <nav layout:fragment="navbar" th:replace="plantillaTema/navbar :: nav"></nav>
 
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-					
+                    
 					<!-- SIDEBAR IZQUIERDO -->
 					<nav class="pcoded-navbar">
 					    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
@@ -75,7 +75,7 @@
 					                            <span class="pcoded-mcaret"></span>
 					                        </a>
 					                    </li>
-					                    <li class="active">
+					                    <li class="">
 					                        <a href="pedido" class="waves-effect waves-dark">
 					                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
 					                            <span class="pcoded-mtext">Pedido</span>
@@ -116,8 +116,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Pedido</h5>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
+                                            <h5 class="m-b-10">ACMEMODA</h5>
+                                            <p class="m-b-0">La empresa ACMEMODA, encargada de vender ropa casual y formal para damas, caballeros, niños.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -125,7 +125,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="index"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Pedido</a>
+                                            <li class="breadcrumb-item"><a href="#!">Dashboard</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -134,57 +134,91 @@
                         </div>
                         <!-- Page-header end -->
                         <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
                             <div class="main-body">
                                 <div class="page-wrapper">
+                                    <!-- Page-body start -->
                                     <div class="page-body">
                                         <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Pedido</h5>
-                                                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li>
-                                                                    <i class="fa fa fa-wrench open-card-option"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-window-maximize full-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-minus minimize-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-refresh reload-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-trash close-card"></i>
-                                                                </li>
-                                                            </ul>
+                                            
+
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="card text-center order-visitor-card">
+                                                            <div class="card-block">
+                                                                <h6 class="m-b-0">Camiseta Polo</h6>
+                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-red"></i>25,50</h4>
+                                                                <p class="m-b-0">-48% por 24 Horas</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="card-block">
-                                                        <p>
-                                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                            laborum."
-                                                        </p>
+                                                    <div class="col-md-3">
+                                                        <div class="card text-center order-visitor-card">
+                                                            <div class="card-block">
+                                                                <h6 class="m-b-0">Blusa rosada M&M</h6>
+                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-green"></i>15,50</h4>
+                                                                <p class="m-b-0">-36% por 6 Meses</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="card bg-c-red total-card">
+                                                            <div class="card-block">
+                                                                <div class="text-left">
+                                                                    <h4>BLUSAS</h4>
+                                                                    <p class="m-0">15 %</p>
+                                                                </div>
+                                                                <span class="label bg-c-red value-badges">DESCUENTO</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="card bg-c-green total-card">
+                                                            <div class="card-block">
+                                                                <div class="text-left">
+                                                                    <h4>CAMISETAS</h4>
+                                                                    <p class="m-0">20 %</p>
+                                                                </div>
+                                                                <span class="label bg-c-green value-badges">DESCUENTO</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="card text-center order-visitor-card">
+                                                            <div class="card-block">
+                                                                <h6 class="m-b-0">Zapatos niño Batman</h6>
+                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-red"></i>10,50</h4>
+                                                                <p class="m-b-0">-36% por 24 Horas</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="card text-center order-visitor-card">
+                                                            <div class="card-block">
+                                                                <h6 class="m-b-0">Blusa Niña Frozen</h6>
+                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-green"></i>12,50</h4>
+                                                                <p class="m-b-0">-36% por 6 Meses</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
 
+                                            
                                         </div>
                                     </div>
+                                    <!-- Page-body end -->
                                 </div>
+                                <div id="styleSelector"> </div>
                             </div>
                         </div>
                     </div>
-                    <div id="styleSelector"></div>
                 </div>
             </div>
         </div>
     </div>
+    
 	<!-- PLANTILLA JQUERY EN EL FOOTER -->
 	<footer layout:fragment="footer" th:replace="plantillaTema/footer :: footer"></footer>
 </body>
