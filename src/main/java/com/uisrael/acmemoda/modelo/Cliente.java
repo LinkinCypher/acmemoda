@@ -12,6 +12,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Data
@@ -29,6 +31,8 @@ public class Cliente implements Serializable {
 	private String correo;
 	private String direccion;
 	private boolean estado;
+	
+	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
 
 	@Column(name = "cedula", length = 15)
