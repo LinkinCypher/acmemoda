@@ -38,15 +38,34 @@ public class ClienteServicioImpl implements IClienteServicio {
 	}
 
 	@Override
-	public Cliente buscarClienteId(String cedula) {
+	public void actualizarCliente(Cliente editarCliente) {
 		try {
-            return clienteRepositorio.buscarClienteId(cedula);
-        } catch (Exception e) {
-            System.out.println("Error al buscar por cédula");
-            return null;
-        }
+			clienteRepositorio.save(editarCliente);
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+		}
 	}
 
+	@Override
+	public void eliminarCliente(int idCliente) {
+		try {
+			clienteRepositorio.deleteById(idCliente);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar los datos");
+		}
+	}
+
+	@Override
+	public Cliente buscarClienteId(int idCliente) {
+		try {
+			return clienteRepositorio.findById(idCliente).get();
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+			return null;
+		}
+	}
+	
+	
 	@Override
 	public List<Cliente> findByNombre(String nombre) {
 		try {

@@ -373,12 +373,15 @@
 															<td th:text = "${cliente.telefono}"></td>
 															<td th:text = "${cliente.estado}"></td>
 															<td>
-																<button class="btn btn-success btn-xs waves-effect waves-light">
+																<a 	th:href="@{/editarcliente/}+ ${cliente.idCliente}" 
+																	class="btn btn-success btn-xs waves-effect waves-light">
 																	<i class="fa fa-edit"></i>
-																</button>
-																<button class="btn btn-danger btn-xs waves-effect waves-light">
+																</a>
+																<a 	th:href="@{/eliminarcliente/}+ ${cliente.idCliente}"
+																	class="btn btn-danger btn-xs waves-effect waves-light"
+																	onclick="return confirm('¿Esta seguro que desea eliminar?')">
 																	<i class="fa fa-trash"></i>
-																</button>
+																</a>
 															</td>
 													    </tr>
 													  </tbody>
