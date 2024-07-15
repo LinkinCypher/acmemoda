@@ -20,7 +20,7 @@ public class ClienteControlador {
   
 	
 	
-	// INDEX
+	// ***** INDEX *****
     @GetMapping("/index")
     public String verIndex() {
         return "/material/index";
@@ -30,23 +30,23 @@ public class ClienteControlador {
     
     
     
-	// CLIENTE
+	// ***** CLIENTE ***** 
     @Autowired
     public IClienteServicio servicioCliente;
     
     //Nuevo
     @GetMapping("/nuevocliente")
     public String crearClientes(Model model) {
-    	model.addAttribute("nuevoCliente", new Cliente()); //registro
-        return "/material/registro";
+    	model.addAttribute("nuevoCliente", new Cliente()); //cliente-registro
+        return "/material/cliente-registro";
     }
     
     //Listar
-    @GetMapping("/listarclientes")
+    @GetMapping("/cliente-listar")
 	public String listarClientes(Model model) { 
     	List<Cliente> listaClientes = servicioCliente.listarCliente(); //recuperar información de la BD
     	model.addAttribute("lista", listaClientes);
-		return "/material/listacliente";  //ruta de la pagina
+		return "/material/cliente-lista";  //ruta de la pagina
 	}
     
     //Guardar
@@ -61,21 +61,21 @@ public class ClienteControlador {
     public String editarCliente(@PathVariable(value="idcliente") int idCliente, Model model) {
     	Cliente clienterecuperado = servicioCliente.buscarClienteId(idCliente);
     	model.addAttribute("nuevoCliente", clienterecuperado);
-    	return "/material/registro";
+    	return "/material/cliente-registro";
     }
     
     //Eliminar
     @GetMapping("/eliminarcliente/{idcliente}")
     public String eliminarCliente(@PathVariable(value="idcliente") int idCliente, Model model) {
     	servicioCliente.eliminarCliente(idCliente);
-    	return "redirect:/listarclientes";
+    	return "redirect:/cliente-listar";
     }  
     
     
     
     
     
-    // PEDIDO
+    // ***** PEDIDO ***** 
     @GetMapping("/pedido")
     public String verPedido() {
         return "/material/pedido";
@@ -85,17 +85,7 @@ public class ClienteControlador {
     
     
     
-    // DETALLE
-    @GetMapping("/detalle")
-    public String verDetalle() {
-        return "/material/detalle";
-    }
-    
-    
-    
-    
-    
-    // CETEGORIA
+    // ***** CETEGORIA ***** 
     @GetMapping("/categoria")
     public String verCategoria() {
         return "/material/categoria";
@@ -105,10 +95,20 @@ public class ClienteControlador {
     
     
     
-    // PRODUCTO
+    // ***** PRODUCTO ***** 
     @GetMapping("/producto")
     public String verProducto() {
         return "/material/producto";
+    }
+    
+    
+    
+    
+    
+    // ***** DETALLE *****
+    @GetMapping("/detalle")
+    public String verDetalle() {
+        return "/material/detalle";
     }
     
     
