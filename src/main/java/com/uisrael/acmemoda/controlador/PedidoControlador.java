@@ -38,7 +38,7 @@ public class PedidoControlador {
 	public String listarPedidos(Model model) { 
     	List<Pedido> listaPedidos = servicioPedido.listarPedido();
     	model.addAttribute("lista", listaPedidos);
-		return "/material/cliente-lista";
+		return "/material/pedido-lista";
 	}
     
     

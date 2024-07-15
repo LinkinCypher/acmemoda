@@ -19,7 +19,7 @@ public class IndexControlador {
     // ***** PEDIDO ***** 
     @GetMapping("/pedido")
     public String verPedido() {
-        return "/material/pedido";
+        return "/material/pedido-lista";
     }
     
     
