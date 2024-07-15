@@ -34,29 +34,29 @@ public class ClienteControlador {
     @Autowired
     public IClienteServicio servicioCliente;
     
-    //Nuevo
+    //Pagina cliente-registro
     @GetMapping("/nuevocliente")
     public String crearClientes(Model model) {
-    	model.addAttribute("nuevoCliente", new Cliente()); //cliente-registro
+    	model.addAttribute("nuevoCliente", new Cliente());
         return "/material/cliente-registro";
     }
     
-    //Listar
+    //Pagina cliente-lista
     @GetMapping("/cliente-listar")
 	public String listarClientes(Model model) { 
-    	List<Cliente> listaClientes = servicioCliente.listarCliente(); //recuperar información de la BD
+    	List<Cliente> listaClientes = servicioCliente.listarCliente();
     	model.addAttribute("lista", listaClientes);
-		return "/material/cliente-lista";  //ruta de la pagina
+		return "/material/cliente-lista";
 	}
     
-    //Guardar
+    //Guardar -> cliente-registro
     @PostMapping("/insertarcliente")
     public String guardarcliente(@ModelAttribute("nuevoCliente") Cliente nuevoCliente) {
     	servicioCliente.insertarCliente(nuevoCliente);
     	return "redirect:/nuevocliente";
     }
     
-    //Editar
+    //Editar -> cliente-regitro
     @GetMapping("/editarcliente/{idcliente}")
     public String editarCliente(@PathVariable(value="idcliente") int idCliente, Model model) {
     	Cliente clienterecuperado = servicioCliente.buscarClienteId(idCliente);
@@ -64,7 +64,7 @@ public class ClienteControlador {
     	return "/material/cliente-registro";
     }
     
-    //Eliminar
+    //Eliminar -> cliente-lista
     @GetMapping("/eliminarcliente/{idcliente}")
     public String eliminarCliente(@PathVariable(value="idcliente") int idCliente, Model model) {
     	servicioCliente.eliminarCliente(idCliente);
