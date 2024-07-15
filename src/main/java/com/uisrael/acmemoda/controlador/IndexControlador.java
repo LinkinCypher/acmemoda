@@ -16,6 +16,14 @@ public class IndexControlador {
     
     
     
+    // ***** CLIENTE *****
+    @GetMapping("/cliente")
+    public String verCliente() {
+        return "/material/cliente-lista";
+    }
+    
+    
+    
     // ***** PEDIDO ***** 
     @GetMapping("/pedido")
     public String verPedido() {
@@ -27,7 +35,7 @@ public class IndexControlador {
     // ***** CETEGORIA ***** 
     @GetMapping("/categoria")
     public String verCategoria() {
-        return "/material/categoria";
+        return "/material/categoria-lista";
     }
     
     
@@ -35,7 +43,7 @@ public class IndexControlador {
     // ***** PRODUCTO ***** 
     @GetMapping("/producto")
     public String verProducto() {
-        return "/material/producto";
+        return "/material/producto-lista";
     }
     
     
@@ -43,7 +51,7 @@ public class IndexControlador {
     // ***** DETALLE *****
     @GetMapping("/detalle")
     public String verDetalle() {
-        return "/material/detalle";
+        return "/material/detalle-lista";
     }
     
     
