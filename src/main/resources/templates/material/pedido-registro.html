@@ -110,6 +110,9 @@
 					</nav>
 					
                     <div class="pcoded-content">
+						
+						
+						
                         <!-- Page-header start -->
                         <div class="page-header">
                             <div class="page-block">
@@ -133,6 +136,9 @@
                             </div>
                         </div>
                         <!-- Page-header end -->
+						
+						
+						
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
@@ -143,34 +149,48 @@
                                                     <div class="card-header">
                                                         <h5>Pedido</h5>
                                                         <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li>
-                                                                    <i class="fa fa fa-wrench open-card-option"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-window-maximize full-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-minus minimize-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-refresh reload-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-trash close-card"></i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                                        
+														<!-- PLANTILLA DE OPTCIONES -->
+														<div th:replace="plantillaTema/options :: div"></div>
+																												
                                                     </div>
-                                                    <div class="card-block">
-                                                        <p>
-                                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                            laborum."
-                                                        </p>
-                                                    </div>
+																												
+														
+													<form 
+														th:action="@{/insertarpedido}" 
+														th:object="${nuevoPedido}"
+														class="form-material"
+														method="post"
+													>
+														<div class="card-block tooltip-icon button-list">
+		                 
+															<div class="input-group">
+		                                                        <input 	type="date" 
+																		class="form-control" 
+																		placeholder="Fecha de pedido" 
+																		title="Ingrese la fecha de pedido" 
+																		data-toggle="tooltip"
+																		th:field="*{fecha}" 
+																		required>
+		                                                    </div>
+
+					                                        <div class="checkbox-fade fade-in-primary">
+				                                                <input type="checkbox" value="" th:field="*{estado}">
+				                                                <span class="text-inverse">Estado</span>
+					                                        </div>
+							                                    
+		                                                    <hr>
+															
+		                                                    <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
+																<i class="fa fa-save"></i>
+																Guardar
+															</button>
+																
+															<!--Importante para hacer el update (reconoce si es insert o update)-->
+		                                                   	<input type="hidden" th:field="*{idPedido}">
+															
+														</div>
+													</form>
                                                 </div>
                                             </div>
 
