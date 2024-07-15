@@ -43,7 +43,7 @@ public class PedidoControlador {
     
     
     
-    //GUardar -> pedido-registro
+    //Guardar -> pedido-registro
     @PostMapping("/insertarpedido")
     public String guardarpedido(@ModelAttribute("nuevoPedido") Pedido nuevoPedido) {
     	servicioPedido.insertarPedido(nuevoPedido);
