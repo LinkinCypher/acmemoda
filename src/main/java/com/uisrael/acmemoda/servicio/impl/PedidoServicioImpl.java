@@ -36,4 +36,31 @@ public class PedidoServicioImpl implements IPedidoServicio{
 		}
 	}
 
+	@Override
+	public void actualizarPedido(Pedido editarPedido) {
+		try {
+			pedidoRepositorio.save(editarPedido);
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+		}
+	}
+
+	@Override
+	public void eliminarPedido(int idPedido) {
+		try {
+			pedidoRepositorio.deleteById(idPedido);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar los datos");
+		}
+	}
+
+	@Override
+	public Pedido buscarPedidoId(int idPedido) {
+		try {
+			return pedidoRepositorio.findById(idPedido).get();
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+			return null;
+		}
+	}
 }

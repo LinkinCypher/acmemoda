@@ -36,4 +36,31 @@ public class CategoriaServicioImpl implements ICategoriaServicio{
 		}
 	}
 
+	@Override
+	public void actualizarCategoria(Categoria editarCategoria) {
+		try {
+			categoriaRepositorio.save(editarCategoria);
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+		}
+	}
+
+	@Override
+	public void eliminarCategoria(int idCategoria) {
+		try {
+			categoriaRepositorio.deleteById(idCategoria);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar los datos");
+		}
+	}
+
+	@Override
+	public Categoria buscarCategoriaId(int idCategoria) {
+		try {
+			return categoriaRepositorio.findById(idCategoria).get();
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+			return null;
+		}
+	}
 }

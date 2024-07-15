@@ -36,4 +36,31 @@ public class DetalleServicioImpl implements IDetalleServicio{
 		}
 	}
 
+	@Override
+	public void actualizarDetalle(Detalle editarDetalle) {
+		try {
+			detalleRepositorio.save(editarDetalle);
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+		}
+	}
+
+	@Override
+	public void eliminarDetalle(int idDetalle) {
+		try {
+			detalleRepositorio.deleteById(idDetalle);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar los datos");
+		}
+	}
+
+	@Override
+	public Detalle buscarDetalleId(int idDetalle) {
+		try {
+			return detalleRepositorio.findById(idDetalle).get();
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+			return null;
+		}
+	}
 }

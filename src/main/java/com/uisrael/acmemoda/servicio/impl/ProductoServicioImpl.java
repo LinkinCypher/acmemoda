@@ -36,4 +36,32 @@ public class ProductoServicioImpl implements IProductoServicio{
 		}
 	}
 
+	@Override
+	public void actualizarProducto(Producto editarProducto) {
+		try {
+			productoRepositorio.save(editarProducto);
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+		}
+	}
+
+	@Override
+	public void eliminarProducto(int idProducto) {
+		try {
+			productoRepositorio.deleteById(idProducto);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar los datos");
+		}
+	}
+
+	@Override
+	public Producto buscarProductoId(int idProducto) {
+		try {
+			return productoRepositorio.findById(idProducto).get();
+		} catch (Exception e) {
+			System.out.println("Error al editar los datos");
+			return null;
+		}
+	}
+
 }

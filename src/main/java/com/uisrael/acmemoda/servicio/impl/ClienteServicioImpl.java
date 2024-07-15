@@ -24,7 +24,6 @@ public class ClienteServicioImpl implements IClienteServicio {
 		} catch (Exception e) {
 			System.out.println("Error al ingresar datos");
 		}
-
 	}
 
 	@Override
