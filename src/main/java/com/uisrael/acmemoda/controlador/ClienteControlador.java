@@ -71,28 +71,4 @@ public class ClienteControlador {
     
     
     
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
 }

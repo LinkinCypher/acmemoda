@@ -6,7 +6,7 @@ import com.uisrael.acmemoda.modelo.Pedido;
 
 public interface IPedidoServicio 
 {
-	public List<Pedido> listartPedidos();
+	public List<Pedido> listarPedido();
 	
 	public void insertarPedido(Pedido nuevoPedido);
 

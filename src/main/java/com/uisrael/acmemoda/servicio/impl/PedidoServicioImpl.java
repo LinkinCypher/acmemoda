@@ -27,7 +27,7 @@ public class PedidoServicioImpl implements IPedidoServicio{
 	}
 
 	@Override
-	public List<Pedido> listartPedidos() {
+	public List<Pedido> listarPedido() {
 		try {
 			return pedidoRepositorio.findAll();
 		} catch (Exception e) {

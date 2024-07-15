@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{plantillaTema/header}">
+
+<head>
+    <title>Registro de Cliente</title>
+</head>
+
+<body>
+	<!-- PLANTILLA RELOAD -->
+    <div th:replace="plantillaTema/preloader :: div"></div>
+	
+	<!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+			
+			<!-- PLANTILLA BARRA DE NAVEGACIÓN SUPERIOR -->
+            <nav layout:fragment="navbar" th:replace="plantillaTema/navbar :: nav"></nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+
+					<!-- SIDEBAR IZQUIERDO -->
+					<nav class="pcoded-navbar">
+					    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+					    <div class="pcoded-inner-navbar main-menu">
+					        <div class="">
+					            <div class="main-menu-header">
+					                <img class="img-80 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">
+					                <div class="user-details">
+					                    <span id="more-details">Cristhian Mora<i class="fa fa-caret-down"></i></span>
+					                </div>
+					            </div>
+					            <div class="main-menu-content">
+					                <ul>
+					                    <li class="more-details">
+					                        <a href="user-profile"><i class="ti-user"></i>Ver Perfil</a>
+					                        <a href="#!"><i class="ti-settings"></i>Configuración</a>
+					                        <a href="ingreso"><i class="ti-layout-sidebar-left"></i>Salir</a>
+					                    </li>
+					                </ul>
+					            </div>
+					        </div>
+					        <div class="p-15 p-b-0">
+					            <form class="form-material">
+					                <div class="form-group form-primary">
+					                    <input type="text" name="footer-email" class="form-control">
+					                    <span class="form-bar"></span>
+					                    <label class="float-label"><i class="fa fa-search m-r-10"></i>Buscar Amigo</label>
+					                </div>
+					            </form>
+					        </div>
+					        <ul class="pcoded-item pcoded-left-item">
+					            <li class="pcoded-hasmenu active pcoded-trigger">
+					                <a href="javascript:void(0)" class="waves-effect waves-dark">
+					                    <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
+					                    <span class="pcoded-mtext">Páginas</span>
+					                    <span class="pcoded-mcaret"></span>
+					                </a>
+					                <ul class="pcoded-submenu">
+					                    <li class="active">
+					                        <a href="nuevocliente" class="waves-effect waves-dark">
+					                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+					                            <span class="pcoded-mtext">Registro Cliente</span>
+					                            <span class="pcoded-mcaret"></span>
+					                        </a>
+					                    </li>
+					                    <li class="">
+					                        <a href="cliente-listar" class="waves-effect waves-dark">
+					                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+					                            <span class="pcoded-mtext">Lista Clientes</span>
+					                            <span class="pcoded-mcaret"></span>
+					                        </a>
+					                    </li>
+					                    <li class="">
+					                        <a href="pedido" class="waves-effect waves-dark">
+					                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+					                            <span class="pcoded-mtext">Pedido</span>
+					                            <span class="pcoded-mcaret"></span>
+					                        </a>
+					                    </li>
+					                     <li class="">
+					                        <a href="detalle" class="waves-effect waves-dark">
+					                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+					                            <span class="pcoded-mtext">Detalle</span>
+					                            <span class="pcoded-mcaret"></span>
+					                        </a>
+					                    </li>
+					                    <li class="">
+					                        <a href="categoria" class="waves-effect waves-dark">
+					                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+					                            <span class="pcoded-mtext">Categoría</span>
+					                            <span class="pcoded-mcaret"></span>
+					                        </a>
+					                    </li>
+					                    <li class="">
+					                        <a href="producto" class="waves-effect waves-dark">
+					                            <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+					                            <span class="pcoded-mtext">Productos</span>
+					                            <span class="pcoded-mcaret"></span>
+					                        </a>
+					                    </li>
+					                </ul>
+					            </li>
+					        </ul>
+					    </div>
+					</nav>
+
+                    <div class="pcoded-content">
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Bienvenido</h5>
+                                            <p class="m-b-0">ACMEMODA </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="index"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Registro de Cliente</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Registro de Cliente</h5>
+                                                        <span>Aquí puedes administrar la información de todos nuestros clientes de manera eficiente y segura. Utiliza esta página para agregar nuevos clientes, actualizar detalles existentes o eliminar registros de clientes que ya no sean necesarios.</span>
+														
+														<!-- PLANTILLA DE OPTCIONES -->
+														<div th:replace="plantillaTema/options :: div"></div>
+														
+                                                    </div>
+													
+													<form 
+														th:action="@{/insertarcliente}" 
+														th:object="${nuevoCliente}"
+														class="form-material"
+														method="post"
+													>
+														<div class="card-block tooltip-icon button-list">
+	                                                        
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Nombre" 
+																		title="Ingrese el nombre" 
+																		data-toggle="tooltip"
+																		th:field="*{nombre}"
+																		required>
+	                                                        </div>
+															
+	                                                        <div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Apellido" 
+																		title="Ingrese el apellido" 
+																		data-toggle="tooltip"
+																		th:field="*{apellido}"
+																		required>
+	                                                        </div>
+															
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Correo" 
+																		title="Ingrese el correo electrónico" 
+																		data-toggle="tooltip"
+																		th:field="*{correo}"
+																		required>
+	                                                        </div>
+															
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Dirección de domicilio" 
+																		title="Ingrese la dirección de domicilio" 
+																		data-toggle="tooltip"
+																		th:field="*{direccion}"
+																		required>
+	                                                        </div>
+															  
+															<div class="input-group">
+	                                                            <input 	type="date" 
+																		class="form-control" 
+																		placeholder="Fecha de nacimiento" 
+																		title="Ingrese la fecha de nacimiento" 
+																		data-toggle="tooltip"
+																		th:field="*{fechaNacimiento}" 
+																		required>
+	                                                        </div>
+															
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Cédula de identidad" 
+																		title="Ingrese la cédula de identidad (10 números)" 
+																		data-toggle="tooltip"
+																		maxlength="10"
+															           	pattern="\d{10}"
+															           	oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
+																		th:field="*{cedulaIdentidad}"
+																		required>
+	                                                        </div>
+															
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Teléfono" 
+																		title="Ingrese el número de teléfono (10 números)" 
+																		data-toggle="tooltip"
+																		maxlength="10"
+															           	pattern="\d{10}"
+															           	oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
+																		th:field="*{telefono}"
+																		required>
+	                                                        </div>
+					                                        <div class="checkbox-fade fade-in-primary">
+				                                                <input type="checkbox" value="" th:field="*{estado}">
+				                                                <span class="text-inverse">Estado</span>
+					                                        </div>
+							                                    
+	                                                        <hr>
+															
+	                                                        <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
+																<i class="fa fa-save"></i>
+																Guardar
+															</button>
+																
+															<!--Importante para hacer el update (reconoce si es insert o update)-->
+                                                           	<input type="hidden" th:field="*{idCliente}">
+															
+														</div>
+													</form>           
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    	</div>
+                    </div>
+                    <div id="styleSelector"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- PLANTILLA JQUERY EN EL FOOTER -->
+	<footer layout:fragment="footer" th:replace="plantillaTema/footer :: footer"></footer>
+	<script th:src="@{/assets/pages/notification/notification.js}" type="text/javascript"></script>
+</body>
+</html>
