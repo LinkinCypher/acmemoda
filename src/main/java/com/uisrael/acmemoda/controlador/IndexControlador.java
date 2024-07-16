@@ -13,31 +13,10 @@ public class IndexControlador {
     public String verIndex() {
         return "/material/index";
     }
-
     
-    
-    // ***** CETEGORIA ***** 
     @GetMapping("/categoria")
     public String verCategoria() {
         return "/material/categoria-lista";
     }
-    
-    
-    
-    // ***** PRODUCTO ***** 
-    @GetMapping("/producto")
-    public String verProducto() {
-        return "/material/producto-lista";
-    }
-    
-    
-    
-    // ***** DETALLE *****
-    @GetMapping("/detalle")
-    public String verDetalle() {
-        return "/material/detalle-lista";
-    }
-    
-    
 
 }

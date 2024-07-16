@@ -18,7 +18,7 @@ public class CategoriaControlador {
 	
 	
 	
-	// ***** CLIENTE ***** 
+	// ***** CATEGORIA ***** 
     @Autowired
     public ICategoriaServicio servicioCategoria;
     
@@ -36,9 +36,9 @@ public class CategoriaControlador {
     //Pagina categoria-lista
     @GetMapping("/categoria-listar")
     public String listarCategoria(Model model) {
-    	List<Categoria> listaCategoria = servicioCategoria.listarCategoria();
-    	model.addAttribute("lista", listaCategoria);
-    	return "/materia/cliente-categoria";
+    	List<Categoria> listaCategorias = servicioCategoria.listarCategoria();
+    	model.addAttribute("lista", listaCategorias);
+    	return "/materia/categoria-lista";
     }
     
     

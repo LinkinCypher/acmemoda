@@ -39,7 +39,7 @@ public class PedidoControlador {
 		listaCliente = servicioCliente.listarCliente();
 		model.addAttribute("nuevoPedido", new Pedido());
 		model.addAttribute("listaCliente", listaCliente);
-		return "/material/index";
+		return "/material/pedido-registro";
 	}
 	
 	

@@ -39,7 +39,7 @@ public class ProductoControlador {
 		listaCategoria = servicioCategoria.listarCategoria();
 		model.addAttribute("nuevoProducto", new Producto());
 		model.addAttribute("listaCategoria", listaCategoria);
-		return "/material/index";
+		return "/material/producto-registro";
 	}
 	
 	

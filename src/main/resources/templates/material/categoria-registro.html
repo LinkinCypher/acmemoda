@@ -83,21 +83,21 @@
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="detalle" class="waves-effect waves-dark">
+                                            <a href="detalle-listar" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
                                                 <span class="pcoded-mtext">Detalle</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class="active">
-                                            <a href="categoria" class="waves-effect waves-dark">
+                                            <a href="categoria-listar" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
                                                 <span class="pcoded-mtext">Categoría</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="producto" class="waves-effect waves-dark">
+                                            <a href="producto-listar" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
                                                 <span class="pcoded-mtext">Productos</span>
                                                 <span class="pcoded-mcaret"></span>
@@ -109,6 +109,9 @@
                         </div>
                     </nav>
                     <div class="pcoded-content">
+                       
+                       
+                       
                         <!-- Page-header start -->
                         <div class="page-header">
                             <div class="page-block">
@@ -116,7 +119,7 @@
                                     <div class="col-md-8">
                                         <div class="page-header-title">
                                             <h5 class="m-b-10">Categoría</h5>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
+                                            <p class="m-b-0">Administración de categorías.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -124,7 +127,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="index"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Categoría</a>
+                                            <li class="breadcrumb-item"><a href="#!">Registro Categoría</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -132,6 +135,9 @@
                             </div>
                         </div>
                         <!-- Page-header end -->
+                        
+                        
+                                  
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
@@ -140,44 +146,62 @@
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Categoría</h5>
-                                                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li>
-                                                                    <i class="fa fa fa-wrench open-card-option"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-window-maximize full-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-minus minimize-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-refresh reload-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-trash close-card"></i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+														<!-- PLANTILLA DE OPTCIONES -->
+														<div th:replace="plantillaTema/options :: div"></div>
                                                     </div>
-                                                    <div class="card-block">
-                                                        <p>
-                                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                                                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                            laborum."
-                                                        </p>
-                                                    </div>
+													
+													<form 
+														th:action="@{/insertarcategoria}" 
+														th:object="${nuevoCategoria}"
+														class="form-material"
+														method="post"
+													>
+														<div class="card-block tooltip-icon button-list">
+	                                                        
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Nombre" 
+																		title="Ingrese el nombre" 
+																		data-toggle="tooltip"
+																		th:field="*{nombre}"
+																		required>
+	                                                        </div>
+															
+	                                                        <div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		placeholder="Descripción" 
+																		title="Ingrese la descripción" 
+																		data-toggle="tooltip"
+																		th:field="*{descripcion}"
+																		required>
+	                                                        </div>
+															
+					                                        <div class="checkbox-fade fade-in-primary">
+				                                                <input type="checkbox" value="" th:field="*{estado}">
+				                                                <span class="text-inverse">Estado</span>
+					                                        </div>
+							                                    
+	                                                        <hr>
+															
+	                                                        <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
+																<i class="fa fa-save"></i>
+																Guardar
+															</button>
+																
+															<!--Importante para hacer el update (reconoce si es insert o update)-->
+                                                           	<input type="hidden" th:field="*{idCategoria}">
+															
+														</div>
+													</form>           
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    	</div>
                     </div>
                     <div id="styleSelector"></div>
                 </div>
