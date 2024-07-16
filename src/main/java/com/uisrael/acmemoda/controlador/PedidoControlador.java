@@ -20,7 +20,7 @@ public class PedidoControlador {
 	
 	
 	
-	// ***** PEDIDO *****
+	// ***** CLIENTE *****
 	@Autowired
 	public IClienteServicio servicioCliente;
 	List<Cliente> listaCliente;
