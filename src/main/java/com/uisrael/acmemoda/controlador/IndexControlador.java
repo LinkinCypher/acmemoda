@@ -13,23 +13,7 @@ public class IndexControlador {
     public String verIndex() {
         return "/material/index";
     }
-    
-    
-    
-    // ***** CLIENTE *****
-    @GetMapping("/cliente")
-    public String verCliente() {
-        return "/material/cliente-lista";
-    }
-    
-    
-    
-    // ***** PEDIDO ***** 
-    @GetMapping("/pedido")
-    public String verPedido() {
-        return "/material/pedido-lista";
-    }
-    
+
     
     
     // ***** CETEGORIA ***** 
