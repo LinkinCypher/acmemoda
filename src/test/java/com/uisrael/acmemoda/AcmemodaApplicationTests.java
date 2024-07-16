@@ -81,7 +81,7 @@ class AcmemodaApplicationTests {
 		nuevoProducto.setNombre("Camisa");
 		nuevoProducto.setDescripcion("Talla G");
 		nuevoProducto.setStock(2);
-		nuevoProducto.setCosto(10.20);
+		//nuevoProducto.setCosto(10.20);
 		nuevoProducto.setFkCategoria(nuevoCategoria);
 		productoServicio.insertarProducto(nuevoProducto);
 		

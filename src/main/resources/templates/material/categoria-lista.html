@@ -177,10 +177,10 @@
 													  </thead>
 													  <tbody>
 														<tr th:each="categoria: ${lista}">
-														    <td th:text = "${categoria:.idCategoria:}"></td>
-															<td th:text = "${categoria:.nombre}"></td>
-															<td th:text = "${categoria:.descripcion}"></td>
-															<td th:text = "${categoria:.estado}"></td>
+														    <td th:text = "${categoria.idCategoria}"></td>
+															<td th:text = "${categoria.nombre}"></td>
+															<td th:text = "${categoria.descripcion}"></td>
+															<td th:text = "${categoria.estado}"></td>
 															<td>
 																<a 	th:href="@{/editarcategoria/}+ ${categoria.idCategoria}" 
 																	class="btn btn-success btn-xs waves-effect waves-light">

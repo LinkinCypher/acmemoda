@@ -35,10 +35,10 @@ public class CategoriaControlador {
     
     //Pagina categoria-lista
     @GetMapping("/categoria-listar")
-    public String listarCategoria(Model model) {
+    public String verCategoria(Model model) {
     	List<Categoria> listaCategorias = servicioCategoria.listarCategoria();
     	model.addAttribute("lista", listaCategorias);
-    	return "/materia/categoria-lista";
+        return "/material/categoria-lista";
     }
     
     
