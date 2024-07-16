@@ -120,7 +120,7 @@
                                     <div class="col-md-8">
                                         <div class="page-header-title">
                                             <h5 class="m-b-10">Pedido Listar</h5>
-                                            <p class="m-b-0">Bienvenido a la sección de gestión de clientes de ACMEMODA.</p>
+                                            <p class="m-b-0">Bienvenido a la sección de gestión de pedido de clientes de ACMEMODA.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -153,7 +153,7 @@
 														<br>
 														<span>
 															<a th:href="@{/nuevopedido}" class="btn btn-primary btn-xs waves-effect waves-light" data-align="center">
-																<i class="fa fa-user-circle"></i>
+																<i class="fa fa-google-wallet"></i>
 																Crear nuevo pedido
 															</a>
 														</span>
@@ -185,7 +185,6 @@
 													  <thead>
 													    <tr>
 															<th scope="col">#</th>
-															<th scope="col">Cliente</th>
 														    <th scope="col">Fecha</th>
 														    <th scope="col">Estado</th>
 															<th scope="col">Editar / Eliminar</th>
@@ -193,7 +192,6 @@
 													  </thead>
 													  <tbody>
 														<tr th:each="pedido: ${lista}">
-															
 														    <td th:text = "${pedido.idPedido}"></td>
 															<td th:text = "${pedido.fecha}"></td>
 															<td th:text = "${pedido.estado}"></td>

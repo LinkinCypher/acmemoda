@@ -120,7 +120,7 @@
                                     <div class="col-md-8">
                                         <div class="page-header-title">
                                             <h5 class="m-b-10">Registrar Pedidos</h5>
-                                            <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
+                                            <p class="m-b-0">Aquí puedes editar los pedidos</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -148,7 +148,7 @@
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <h5>Pedido</h5>
-                                                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                                        <span></span>
                                                         
 														<!-- PLANTILLA DE OPTCIONES -->
 														<div th:replace="plantillaTema/options :: div"></div>
@@ -162,8 +162,27 @@
 														class="form-material"
 														method="post"
 													>
+														
 														<div class="card-block tooltip-icon button-list">
-		                 
+														
+															<div class="input-group">
+	                                                            <input 	type="text" 
+																		class="form-control" 
+																		data-toggle="tooltip"
+																		th:field="*{idPedido}"
+																		disabled
+																		>
+	                                                        </div>
+	                                                        
+		                 									<div>
+																<select class="form-select form-control" th:field="*{fkCliente.idCliente}"
+																aria-label="Default select example">
+																<option selected value="0">Nombre y apellido del cliente</option>
+																<option  th:each="cliente:${listaCliente}" th:value="${cliente.idCliente}"
+																th:text="${cliente.nombre}+' '+ ${cliente.apellido}"></option>
+																</select>
+															</div>
+															
 															<div class="input-group">
 		                                                        <input 	type="date" 
 																		class="form-control" 

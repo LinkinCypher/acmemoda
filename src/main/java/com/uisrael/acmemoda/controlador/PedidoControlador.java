@@ -10,12 +10,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.uisrael.acmemoda.modelo.Cliente;
 import com.uisrael.acmemoda.modelo.Pedido;
+import com.uisrael.acmemoda.servicio.IClienteServicio;
 import com.uisrael.acmemoda.servicio.IPedidoServicio;
 
 @Controller
 public class PedidoControlador {
 	
+	
+	
+	// ***** PEDIDO *****
+	@Autowired
+	public IClienteServicio servicioCliente;
+	List<Cliente> listaCliente;
+
 	
 	
 	// ***** PEDIDO *****
@@ -27,8 +36,10 @@ public class PedidoControlador {
 	// Pagina pedido-registro
 	@GetMapping("/nuevopedido")
 	public String crearPedidos(Model model) {
+		listaCliente = servicioCliente.listarCliente();
 		model.addAttribute("nuevoPedido", new Pedido());
-		return "/material/pedido-registro";
+		model.addAttribute("listaCliente", listaCliente);
+		return "/material/index";
 	}
 	
 	
@@ -37,7 +48,9 @@ public class PedidoControlador {
     @GetMapping("/pedido-listar")
 	public String listarPedidos(Model model) { 
     	List<Pedido> listaPedidos = servicioPedido.listarPedido();
+    	listaCliente = servicioCliente.listarCliente();
     	model.addAttribute("lista", listaPedidos);
+    	model.addAttribute("listaCliente", listaCliente);
 		return "/material/pedido-lista";
 	}
     
@@ -55,8 +68,10 @@ public class PedidoControlador {
     //Editar -> pedido-registro
     @GetMapping("/editarpedido/{idpedido}")
     public String editarPedido(@PathVariable(value="idpedido") int idPedido, Model model) {
+    	listaCliente = servicioCliente.listarCliente();
     	Pedido pedidorecuperado = servicioPedido.buscarPedidoId(idPedido);
     	model.addAttribute("nuevoPedido", pedidorecuperado);
+    	model.addAttribute("listaCliente", listaCliente);
     	return "/material/pedido-registro";
     }
     
