@@ -5,110 +5,26 @@
 	layout:decorate="~{plantillaTema/header}">
 
 <head>
-    <title>Lista Cliente</title>
+    <title>Pedido - Lista</title>
 </head>
 
 <body>
 	<!-- PLANTILLA RELOAD -->
-    <div th:replace="plantillaTema/preloader :: div"></div>
+	<div th:replace="plantillaTema/preloader :: div"></div>
 	
-    <!-- Pre-loader end -->
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-			
+            
 			<!-- PLANTILLA BARRA DE NAVEGACIÓN SUPERIOR -->
             <nav layout:fragment="navbar" th:replace="plantillaTema/navbar :: nav"></nav>
 
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
 					
-					<!-- SIDEBAR IZQUIERDO -->
-                    <nav class="pcoded-navbar">
-                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">
-                            <div class="">
-                                <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">
-                                    <div class="user-details">
-                                        <span id="more-details">Cristhian Mora<i class="fa fa-caret-down"></i></span>
-                                    </div>
-                                </div>
-                                <div class="main-menu-content">
-                                    <ul>
-                                        <li class="more-details">
-                                            <a href="user-profile"><i class="ti-user"></i>Ver Perfil</a>
-                                            <a href="#!"><i class="ti-settings"></i>Configuración</a>
-                                            <a href="ingreso"><i class="ti-layout-sidebar-left"></i>Salir</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="p-15 p-b-0">
-                                <form class="form-material">
-                                    <div class="form-group form-primary">
-                                        <input type="text" name="footer-email" class="form-control">
-                                        <span class="form-bar"></span>
-                                        <label class="float-label"><i class="fa fa-search m-r-10"></i>Buscar Amigo</label>
-                                    </div>
-                                </form>
-                            </div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu active pcoded-trigger">
-                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
-                                        <span class="pcoded-mtext">Páginas</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class="">
-                                            <a href="nuevocliente" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Registro Cliente</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="cliente-listar" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Lista Clientes</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="pedido-listar" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Pedido</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                         <li class="">
-                                            <a href="detalle-listar" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Detalle</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="categoria-listar" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Categoría</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="producto-listar" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Productos</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-					
+					<!-- PLANTILLA SIDEBAR IZQUIERDO -->
+					<nav layout:fragment="sidebar" th:replace="plantillaTema/sidebar :: nav"></nav>
+
                     <div class="pcoded-content">
 						
 						
@@ -119,8 +35,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Pedido Listar</h5>
-                                            <p class="m-b-0">Bienvenido a la sección de gestión de pedido de clientes de ACMEMODA.</p>
+                                            <h5 class="m-b-10">Lista de pedidos</h5>
+                                            <p class="m-b-0">Bienvenido a la sección de pedidos</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -128,7 +44,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="index"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Pedido</a>
+                                            <li class="breadcrumb-item"><a href="#!">Pedido - Lista</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -136,9 +52,9 @@
                             </div>
                         </div>
                         <!-- Page-header end -->
-						
-						
-						
+                        
+                        
+                        
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
@@ -147,10 +63,15 @@
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Pedido</h5>
-                                                        <span>Aquí puedes administrar la información de todos los pedidos.</span>
+                                                        <h5>Aquí puedes ver la lista de pedido</h5>
+                                                        <span></span>
 														
-														<br>
+														<!-- PLANTILLA DE OPTCIONES -->
+														<div th:replace="plantillaTema/options :: div"></div>
+
+														
+														
+														<!-- INICIO -->
 														<span>
 															<a th:href="@{/nuevopedido}" class="btn btn-primary btn-xs waves-effect waves-light" data-align="center">
 																<i class="fa fa-google-wallet"></i>
@@ -209,12 +130,13 @@
 													    </tr>
 													  </tbody>
 													</table>
-											     
-			                                            
-													
+													<!-- FIN -->
+														
+														
+														
+													</div> 
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>

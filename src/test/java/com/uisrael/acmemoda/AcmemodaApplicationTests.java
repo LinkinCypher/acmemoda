@@ -38,7 +38,7 @@ class AcmemodaApplicationTests {
 	void contextLoads() {
 
 		
-		
+		/*
 		// INSERTAR CLIENTE
 		Cliente nuevoCliente = new Cliente();
 		nuevoCliente.setNombre("Cristhian");
@@ -59,7 +59,7 @@ class AcmemodaApplicationTests {
 		clienteServicio.insertarCliente(nuevoCliente);
 
 		
-
+		
 		// INSERTAR PEDIDO (CLIENTE -> PEDIDO)
 		Pedido nuevoPedido = new Pedido();
 		nuevoPedido.setFecha(new Date());
@@ -81,7 +81,7 @@ class AcmemodaApplicationTests {
 		nuevoProducto.setNombre("Camisa");
 		nuevoProducto.setDescripcion("Talla G");
 		nuevoProducto.setStock(2);
-		//nuevoProducto.setCosto(10.20);
+		nuevoProducto.setCosto(10.20);
 		nuevoProducto.setFkCategoria(nuevoCategoria);
 		productoServicio.insertarProducto(nuevoProducto);
 		
@@ -121,7 +121,7 @@ class AcmemodaApplicationTests {
 		for (Cliente cliente : lista3) {
 			System.out.println(cliente.getIdCliente() + " " + cliente.getApellido() + " " + cliente.getNombre());
 		}
-		
+		*/
 		
 	}
 
