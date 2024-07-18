@@ -5,24 +5,43 @@
 	layout:decorate="~{plantillaTema/header}">
 
 <head>
-    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACMEMODA - Home</title>
+    
+    <style>
+        .card-header-icon {
+            display: flex;
+            align-items: center;
+        }
+        .card-header-icon i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 
 <body>
 	<!-- PLANTILLA RELOAD -->
 	<div th:replace="plantillaTema/preloader :: div"></div>
-		
-    <!-- Pre-loader end -->
+	
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-			
+            
 			<!-- PLANTILLA BARRA DE NAVEGACIÓN SUPERIOR -->
             <nav layout:fragment="navbar" th:replace="plantillaTema/navbar :: nav"></nav>
 
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    
+					
 					<!-- PLANTILLA SIDEBAR IZQUIERDO -->
 					<nav layout:fragment="sidebar" th:replace="plantillaTema/sidebar :: nav"></nav>
 
@@ -36,8 +55,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">ACMEMODA</h5>
-                                            <p class="m-b-0">La empresa ACMEMODA, encargada de vender ropa casual y formal para damas, caballeros, niños.</p>
+                                            <h5 class="m-b-10">Index</h5>
+                                            <p class="m-b-0">Bienvenido a ACMEMODA</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -45,7 +64,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="index"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                                            <li class="breadcrumb-item"><a href="#!">Index</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -53,88 +72,65 @@
                             </div>
                         </div>
                         <!-- Page-header end -->
-						
-						
-						
+                        
+                        
+                        
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
                                     <div class="page-body">
                                         <div class="row">
-                                            
+                                            <div class="col-sm-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        														
+														<!-- PLANTILLA DE OPCIONES -->
+														<div th:replace="plantillaTema/options :: div"></div>
 
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <div class="card text-center order-visitor-card">
-                                                            <div class="card-block">
-                                                                <h6 class="m-b-0">Camiseta Polo</h6>
-                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-red"></i>25,50</h4>
-                                                                <p class="m-b-0">-48% por 24 Horas</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="card text-center order-visitor-card">
-                                                            <div class="card-block">
-                                                                <h6 class="m-b-0">Blusa rosada M&M</h6>
-                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-green"></i>15,50</h4>
-                                                                <p class="m-b-0">-36% por 6 Meses</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="card bg-c-red total-card">
-                                                            <div class="card-block">
-                                                                <div class="text-left">
-                                                                    <h4>BLUSAS</h4>
-                                                                    <p class="m-0">15 %</p>
-                                                                </div>
-                                                                <span class="label bg-c-red value-badges">DESCUENTO</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="card bg-c-green total-card">
-                                                            <div class="card-block">
-                                                                <div class="text-left">
-                                                                    <h4>CAMISETAS</h4>
-                                                                    <p class="m-0">20 %</p>
-                                                                </div>
-                                                                <span class="label bg-c-green value-badges">DESCUENTO</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="card text-center order-visitor-card">
-                                                            <div class="card-block">
-                                                                <h6 class="m-b-0">Zapatos niño Batman</h6>
-                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-red"></i>10,50</h4>
-                                                                <p class="m-b-0">-36% por 24 Horas</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="card text-center order-visitor-card">
-                                                            <div class="card-block">
-                                                                <h6 class="m-b-0">Blusa Niña Frozen</h6>
-                                                                <h4 class="m-t-15 m-b-15"><i class="fa fa-usd m-r-15 text-c-green"></i>12,50</h4>
-                                                                <p class="m-b-0">-36% por 6 Meses</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+														
+														
+														<!-- INICIO -->
+														<div class="container mt-5">
+													        <section id="acmemoda-logica" class="mt-5">
+													            <h2 class="section-header">Flujo y Lógica de ACMEMODA</h2>
+													            <div class="row">
+													                <div class="col-md-12">
+													                    <div class="card">
+													                        <div class="card-header card-header-icon">
+													                            <i class="fas fa-project-diagram"></i>
+													                            <h5 class="card-title mb-0">Flujo General del Sistema</h5>
+													                        </div>
+													                        <div class="card-body">
+													                            <ol>
+													                                <li>Registra nuevas categorías y productos.</li>
+													                                <li>Clientes realizan pedidos.</li>
+													                                <li>Cada pedido incluye detalles de productos y cantidades.</li>
+													                                <li>Calcula el costo total de los pedidos.</li>
+													                                <li>Actualiza y elimina registros según sea necesario.</li>
+													                            </ol>
+													                        </div>
+													                    </div>
+													                </div>
+													            </div>
+													        </section>
+													    </div>
+																											
+													
+													    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+														<!-- FIN -->
+														
+														
+														
+													</div> 
                                                 </div>
                                             </div>
-
-                                            
                                         </div>
                                     </div>
-                                    <!-- Page-body end -->
                                 </div>
-                                <div id="styleSelector"> </div>
                             </div>
                         </div>
                     </div>
+                    <div id="styleSelector"></div>
                 </div>
             </div>
         </div>
