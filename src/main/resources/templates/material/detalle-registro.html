@@ -83,7 +83,6 @@
 												                </div>
 												
 												                <div class="row mt-3">
-												                    <!-- Cliente y Pedido -->
 												                    <div class="col-md-6">
 												                        <div>
 												                            <select class="form-select form-control" th:field="*{fkPedido.fkCliente.idCliente}">
@@ -108,7 +107,6 @@
 												                </div>
 												
 												                <div class="row mt-3">
-												                    <!-- Categoría y Producto -->
 												                    <div class="col-md-6">
 												                        <div>
 												                            <select class="form-select form-control" th:field="*{fkProducto.fkCategoria.idCategoria}">
@@ -133,7 +131,6 @@
 												                </div>
 												
 												                <div class="row mt-3">
-												                    <!-- Cantidad -->
 												                    <div class="col-md-6">
 												                        <div class="input-group">
 												                            <input type="number" 
@@ -146,14 +143,11 @@
 												                                   required>
 												                        </div>
 												                    </div>
-												                    
-												                    <!-- Estado -->
-												                    <div class="col-md-6">
-												                        <div class="checkbox-fade fade-in-primary mt-3">
-												                            <input type="checkbox" value="" th:field="*{estado}">
-												                            ¿Está activo?
-												                        </div>
-												                    </div>
+												                </div>
+												                
+										                        <div class="checkbox-fade fade-in-primary mt-3">
+										                            <input type="checkbox" value="" th:field="*{estado}">
+										                            ¿Está activo?
 												                </div>
 												                
 												                <hr>
