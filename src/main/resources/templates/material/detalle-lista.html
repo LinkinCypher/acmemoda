@@ -35,8 +35,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Detalle</h5>
-                                            <p class="m-b-0">Bienvenido a la sección de detalle</p>
+                                            <h5 class="m-b-10">Detalle Venta</h5>
+                                            <p class="m-b-0">Bienvenido a la sección de detalle de venta.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -63,7 +63,7 @@
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Detalles</h5>
+                                                        <h5>Lista de los detalles de ventas</h5>
                                                         <span></span>
 														
 														<!-- PLANTILLA DE OPCIONES -->
@@ -75,7 +75,7 @@
 														<span>
 															<a th:href="@{/nuevodetalle}" class="btn btn-primary btn-xs waves-effect waves-light" data-align="center">
 																<i class="fa fa-credit-card"></i>
-																Crear nuevo Detalle
+																Crear nuevo Detalle de Venta
 															</a>
 														</span>
 														
@@ -107,7 +107,7 @@
 											                    <td>
 																    <label 	class="label label-md" 
 																    		th:classappend="${detalle.estado} ? 'label-primary' : 'label-danger'"
-																           	th:text="${detalle.estado ? 'Activo' : 'Inactivo'}">
+																           	th:text="${detalle.estado ? 'Facturado' : 'Sin facturar'}">
 																    </label>
 																</td>
 															    <td>

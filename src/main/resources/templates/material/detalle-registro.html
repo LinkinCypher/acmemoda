@@ -1,144 +1,252 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{plantillaTema/header}">
+	
 <head>
-    <title>Registro de Detalle</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Detalle - Registro</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
+
 <body>
-    <div class="container mt-5">
-        <h2>Registro de Detalle</h2>
-        <form th:action="@{/insertardetalle}" th:object="${nuevoDetalle}" class="form-material" method="post">
-            <div class="card-block tooltip-icon button-list">
-                <div class="input-group">
-                    <input type="text" 
-                           class="form-control" 
-                           data-toggle="tooltip"
-                           th:field="*{idDetalle}"
-                           disabled>
-                </div>
+    <!-- PLANTILLA RELOAD -->
+	<div th:replace="plantillaTema/preloader :: div"></div>
+	
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            
+			<!-- PLANTILLA BARRA DE NAVEGACIÓN SUPERIOR -->
+            <nav layout:fragment="navbar" th:replace="plantillaTema/navbar :: nav"></nav>
 
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div>
-                            <select class="form-select form-control" id="clienteSelect" th:field="*{fkPedido.fkCliente.idCliente}">
-                                <option selected value="0">Nombre y apellido del cliente</option>
-                                <option th:each="cliente : ${listaCliente}" th:value="${cliente.idCliente}"
-                                        th:text="${cliente.nombre} + ' ' + ${cliente.apellido}">
-                                </option>
-                            </select>
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+					
+					<!-- PLANTILLA SIDEBAR IZQUIERDO -->
+					<nav layout:fragment="sidebar" th:replace="plantillaTema/sidebar :: nav"></nav>
+					
+                    <div class="pcoded-content">
+						
+						
+						
+                        <!-- Page-header start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Registrar Detalle Venta</h5>
+                                            <p class="m-b-0">Bienvenido a la sección de Detalle de la Venta</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="index"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Detalle Venta - Registro</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <div>
-                            <select class="form-select form-control" id="pedidoSelect" th:field="*{fkPedido.idPedido}">
-                                <option selected value="0">Seleccionar Pedido</option>
-                                <!-- Opciones serán cargadas dinámicamente -->
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                        <!-- Page-header end -->
+						
+						
+						
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Aquí se podrá escoger el pedido dependiendo del cliente y el producto dependiendo de la categoría.</h5>
+                                                        <span></span>
+                                                        
+														<!-- PLANTILLA DE OPTCIONES -->
+														<div th:replace="plantillaTema/options :: div"></div>
 
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div>
-                            <select class="form-select form-control" id="categoriaSelect" th:field="*{fkProducto.fkCategoria.idCategoria}">
-                                <option selected value="0">Nombre de la Categoría</option>
-                                <option th:each="categoria : ${listaCategoria}" th:value="${categoria.idCategoria}"
-                                        th:text="${categoria.nombre}">
-                                </option>
-                            </select>
+														
+														
+														<!-- INICIO -->
+												        <form 
+												        	th:action="@{/insertardetalle}" 
+												        	th:object="${nuevoDetalle}" 
+												        	class="form-material" 
+												        	method="post">
+												        	
+												            <div class="card-block tooltip-icon button-list">
+												                <div class="input-group mb-3">
+												                    <input type="text" 
+												                           class="form-control" 
+												                           data-toggle="tooltip"
+												                           th:field="*{idDetalle}"
+												                           disabled>
+												                </div>
+												
+												                <div class="row mt-3">
+												                    <div class="col-md-6 mb-3">
+												                    <label class="form-label">Cliente:</label>
+												                        <div>
+												                            <select	class="form-select form-control" 
+												                            		id="clienteSelect" 
+												                            		th:field="*{fkPedido.fkCliente.idCliente}">
+												                                <option selected value="0">Nombre y apellido del cliente</option>
+												                                <option th:each="cliente : ${listaCliente}" 
+												                                		th:value="${cliente.idCliente}"
+												                                        th:text="${cliente.nombre} + ' ' + ${cliente.apellido}">
+												                                </option>
+												                            </select>
+												                        </div>
+												                    </div>
+												                    
+												                    <div class="col-md-6 mb-3">
+                        												<label class="form-label">Pedido:</label>
+												                        <div>
+												                            <select class="form-select form-control" id="pedidoSelect" th:field="*{fkPedido.idPedido}">
+												                                <option selected value="0">Seleccionar Pedido</option>
+												                                <!-- Opciones serán cargadas dinámicamente -->
+												                            </select>
+												                        </div>
+												                    </div>
+												                </div>
+												
+												                <div class="row mt-3">
+												                    <div class="col-md-6 mb-3">
+												                        <label class="form-label">Categoría:</label>
+												                        <div>
+												                            <select	class="form-select form-control" 
+												                            		id="categoriaSelect" 
+												                            		th:field="*{fkProducto.fkCategoria.idCategoria}">
+												                                <option selected value="0">Nombre de la Categoría</option>
+												                                <option th:each="categoria : ${listaCategoria}" th:value="${categoria.idCategoria}"
+												                                        th:text="${categoria.nombre}">
+												                                </option>
+												                            </select>
+												                        </div>
+												                    </div>
+												                    
+												                    <div class="col-md-6 mb-3">
+                        												<label class="form-label">Producto:</label>
+												                        <div>
+												                            <select class="form-select form-control" 
+												                            		id="productoSelect" 
+												                            		th:field="*{fkProducto.idProducto}">
+												                                <option selected value="0">Seleccionar Producto</option>
+												                                <!-- Opciones serán cargadas dinámicamente -->
+												                            </select>
+												                        </div>
+												                    </div>
+												                </div>
+												
+												                <div class="row mt-3">
+											                    <div class="col-md-6 mb-3">
+											                        <label class="form-label">Cantidad:</label>
+												                        <div class="input-group">
+												                            <input type="number" 
+												                                   class="form-control" 
+												                                   placeholder="Cantidad" 
+												                                   title="Ingrese la cantidad" 
+												                                   data-toggle="tooltip"
+												                                   th:field="*{cantidad}" 
+												                                   min="1"
+												                                   required>
+												                        </div>
+												                    </div>
+												                </div>
+												                
+												                <div class="checkbox-fade fade-in-primary mt-3">
+												                    <input type="checkbox" value="" th:field="*{estado}">
+												                    ¿Está facturado?
+												                </div>
+												                
+												                <hr>
+												                
+												                <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
+												                    <i class="fa fa-save"></i>
+												                    Guardar
+												                </button>
+												                
+												                <!-- Importante para hacer el update (reconoce si es insert o update) -->
+												                <input type="hidden" th:field="*{idDetalle}">
+												            </div>
+												        </form>
+												    </div>
+												
+												    <script>
+												        $(document).ready(function() {
+												            // Actualizar pedidos según el cliente seleccionado
+												            $('#clienteSelect').change(function() {
+												                var clienteId = $(this).val();
+												                if (clienteId != 0) {
+												                    $.ajax({
+												                        url: '/pedidosPorCliente/' + clienteId,
+												                        method: 'GET',
+												                        success: function(data) {
+												                            $('#pedidoSelect').empty();
+												                            $('#pedidoSelect').append('<option selected value="0">Seleccionar Pedido</option>');
+												                            $.each(data, function(index, pedido) {
+												                                $('#pedidoSelect').append('<option value="' + pedido.idPedido + '">' + pedido.fecha + '</option>');
+												                            });
+												                        }
+												                    });
+												                } else {
+												                    $('#pedidoSelect').empty();
+												                    $('#pedidoSelect').append('<option selected value="0">Seleccionar Pedido</option>');
+												                }
+												            });
+												
+												            // Actualizar productos según la categoría seleccionada
+												            $('#categoriaSelect').change(function() {
+												                var categoriaId = $(this).val();
+												                if (categoriaId != 0) {
+												                    $.ajax({
+												                        url: '/productosPorCategoria/' + categoriaId,
+												                        method: 'GET',
+												                        success: function(data) {
+												                            $('#productoSelect').empty();
+												                            $('#productoSelect').append('<option selected value="0">Seleccionar Producto</option>');
+												                            $.each(data, function(index, producto) {
+												                                $('#productoSelect').append('<option value="' + producto.idProducto + '">' + producto.nombre + '</option>');
+												                            });
+												                        }
+												                    });
+												                } else {
+												                    $('#productoSelect').empty();
+												                    $('#productoSelect').append('<option selected value="0">Seleccionar Producto</option>');
+												                }
+												            });
+												        });
+												    </script>
+												    
+												    
+												    
+												    
+												<!-- FIN -->
+														
+														
+													
+													</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6">
-                        <div>
-                            <select class="form-select form-control" id="productoSelect" th:field="*{fkProducto.idProducto}">
-                                <option selected value="0">Seleccionar Producto</option>
-                                <!-- Opciones serán cargadas dinámicamente -->
-                            </select>
-                        </div>
-                    </div>
+                    <div id="styleSelector"></div>
                 </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <input type="number" 
-                                   class="form-control" 
-                                   placeholder="Cantidad" 
-                                   title="Ingrese la cantidad" 
-                                   data-toggle="tooltip"
-                                   th:field="*{cantidad}" 
-                                   min="1"
-                                   required>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="checkbox-fade fade-in-primary mt-3">
-                    <input type="checkbox" value="" th:field="*{estado}">
-                    ¿Está activo?
-                </div>
-                
-                <hr>
-                
-                <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
-                    <i class="fa fa-save"></i>
-                    Guardar
-                </button>
-                
-                <!-- Importante para hacer el update (reconoce si es insert o update) -->
-                <input type="hidden" th:field="*{idDetalle}">
             </div>
-        </form>
+        </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            // Actualizar pedidos según el cliente seleccionado
-            $('#clienteSelect').change(function() {
-                var clienteId = $(this).val();
-                if (clienteId != 0) {
-                    $.ajax({
-                        url: '/pedidosPorCliente/' + clienteId,
-                        method: 'GET',
-                        success: function(data) {
-                            $('#pedidoSelect').empty();
-                            $('#pedidoSelect').append('<option selected value="0">Seleccionar Pedido</option>');
-                            $.each(data, function(index, pedido) {
-                                $('#pedidoSelect').append('<option value="' + pedido.idPedido + '">' + pedido.fecha + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('#pedidoSelect').empty();
-                    $('#pedidoSelect').append('<option selected value="0">Seleccionar Pedido</option>');
-                }
-            });
-
-            // Actualizar productos según la categoría seleccionada
-            $('#categoriaSelect').change(function() {
-                var categoriaId = $(this).val();
-                if (categoriaId != 0) {
-                    $.ajax({
-                        url: '/productosPorCategoria/' + categoriaId,
-                        method: 'GET',
-                        success: function(data) {
-                            $('#productoSelect').empty();
-                            $('#productoSelect').append('<option selected value="0">Seleccionar Producto</option>');
-                            $.each(data, function(index, producto) {
-                                $('#productoSelect').append('<option value="' + producto.idProducto + '">' + producto.nombre + '</option>');
-                            });
-                        }
-                    });
-                } else {
-                    $('#productoSelect').empty();
-                    $('#productoSelect').append('<option selected value="0">Seleccionar Producto</option>');
-                }
-            });
-        });
-    </script>
+    
+	<!-- PLANTILLA JQUERY EN EL FOOTER -->
+	<footer layout:fragment="footer" th:replace="plantillaTema/footer :: footer"></footer>
 </body>
+
 </html>
