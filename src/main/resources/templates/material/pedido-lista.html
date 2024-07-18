@@ -66,7 +66,7 @@
                                                         <h5>Aquí puedes ver la fecha de los pedidos de los clientes.</h5>
                                                         <span></span>
 														
-														<!-- PLANTILLA DE OPTCIONES -->
+														<!-- PLANTILLA DE OPCIONES -->
 														<div th:replace="plantillaTema/options :: div"></div>
 
 														
@@ -79,58 +79,35 @@
 															</a>
 														</span>
 														
-														<div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li>
-                                                                    <i class="fa fa fa-wrench open-card-option"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-window-maximize full-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-minus minimize-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-refresh reload-card"></i>
-                                                                </li>
-                                                                <li>
-                                                                    <i class="fa fa-trash close-card"></i>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-													
-													
-													
-													<table class="table">
-													  <thead>
-													    <tr>
-															<th scope="col">#</th>
-														    <th scope="col">Fecha</th>
-														    <th scope="col">Estado</th>
-															<th scope="col">Editar / Eliminar</th>
-													    </tr>
-													  </thead>
-													  <tbody>
-														<tr th:each="pedido: ${lista}">
-														    <td th:text = "${pedido.idPedido}"></td>
-															<td th:text = "${pedido.fecha}"></td>
-															<td th:text = "${pedido.estado}"></td>
-														    <td>
-																<a 	th:href="@{/editarpedido/}+ ${pedido.idPedido}" 
-																	class="btn btn-success btn-xs waves-effect waves-light">
-																	<i class="fa fa-edit"></i>
-																</a>
-																<a 	th:href="@{/eliminarpedido/}+ ${pedido.idPedido}"
-																	class="btn btn-danger btn-xs waves-effect waves-light"
-																	onclick="return confirm('¿Esta seguro que desea eliminar?')">
-																	<i class="fa fa-trash"></i>
-																</a>
-															</td>
-													    </tr>
-													  </tbody>
-													</table>
-													<!-- FIN -->
+														<table class="table">
+														  <thead>
+														    <tr>
+																<th scope="col">#</th>
+															    <th scope="col">Fecha</th>
+															    <th scope="col">Estado</th>
+																<th scope="col">Editar / Eliminar</th>
+														    </tr>
+														  </thead>
+														  <tbody>
+															<tr th:each="pedido: ${lista}">
+															    <td th:text = "${pedido.idPedido}"></td>
+																<td th:text = "${pedido.fecha}"></td>
+																<td th:text = "${pedido.estado}"></td>
+															    <td>
+																	<a 	th:href="@{/editarpedido/}+ ${pedido.idPedido}" 
+																		class="btn btn-success btn-xs waves-effect waves-light">
+																		<i class="fa fa-edit"></i>
+																	</a>
+																	<a 	th:href="@{/eliminarpedido/}+ ${pedido.idPedido}"
+																		class="btn btn-danger btn-xs waves-effect waves-light"
+																		onclick="return confirm('¿Esta seguro que desea eliminar?')">
+																		<i class="fa fa-trash"></i>
+																	</a>
+																</td>
+														    </tr>
+														  </tbody>
+														</table>
+														<!-- FIN -->
 														
 														
 														
