@@ -4,16 +4,17 @@ import java.util.List;
 
 import com.uisrael.acmemoda.modelo.Pedido;
 
-public interface IPedidoServicio 
-{
-	public List<Pedido> listarPedido();
-	
-	public void insertarPedido(Pedido nuevoPedido);
+public interface IPedidoServicio {
+    public List<Pedido> listarPedido();
+    
+    public void insertarPedido(Pedido nuevoPedido);
 
-	public void actualizarPedido(Pedido editarPedido);
-	
-	public void eliminarPedido(int idPedido);
-	
-	public Pedido buscarPedidoId(int idPedido);
+    public void actualizarPedido(Pedido editarPedido);
+    
+    public void eliminarPedido(int idPedido);
+    
+    public Pedido buscarPedidoId(int idPedido);
 
+    // Nuevo método para buscar pedidos por cliente
+    public List<Pedido> buscarPedidosPorClienteId(int idCliente);
 }

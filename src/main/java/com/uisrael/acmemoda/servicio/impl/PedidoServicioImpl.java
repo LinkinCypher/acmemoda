@@ -12,55 +12,65 @@ import com.uisrael.acmemoda.servicio.IPedidoServicio;
 
 @Service
 @Component
-public class PedidoServicioImpl implements IPedidoServicio{
+public class PedidoServicioImpl implements IPedidoServicio {
 
-	@Autowired
-	IPedidoRepositorio pedidoRepositorio;
-	
-	@Override
-	public void insertarPedido(Pedido nuevoPedido) {
-		try {
-			pedidoRepositorio.save(nuevoPedido);
-		} catch (Exception e) {
-			System.out.println("Error al ingresar datos");
-		}
-	}
+    @Autowired
+    IPedidoRepositorio pedidoRepositorio;
+    
+    @Override
+    public void insertarPedido(Pedido nuevoPedido) {
+        try {
+            pedidoRepositorio.save(nuevoPedido);
+        } catch (Exception e) {
+            System.out.println("Error al ingresar datos");
+        }
+    }
 
-	@Override
-	public List<Pedido> listarPedido() {
-		try {
-			return pedidoRepositorio.findAll();
-		} catch (Exception e) {
-			System.out.println("Error al listar los datos");
-			return null;
-		}
-	}
+    @Override
+    public List<Pedido> listarPedido() {
+        try {
+            return pedidoRepositorio.findAll();
+        } catch (Exception e) {
+            System.out.println("Error al listar los datos");
+            return null;
+        }
+    }
 
-	@Override
-	public void actualizarPedido(Pedido editarPedido) {
-		try {
-			pedidoRepositorio.save(editarPedido);
-		} catch (Exception e) {
-			System.out.println("Error al editar los datos");
-		}
-	}
+    @Override
+    public void actualizarPedido(Pedido editarPedido) {
+        try {
+            pedidoRepositorio.save(editarPedido);
+        } catch (Exception e) {
+            System.out.println("Error al editar los datos");
+        }
+    }
 
-	@Override
-	public void eliminarPedido(int idPedido) {
-		try {
-			pedidoRepositorio.deleteById(idPedido);
-		} catch (Exception e) {
-			System.out.println("Error al eliminar los datos");
-		}
-	}
+    @Override
+    public void eliminarPedido(int idPedido) {
+        try {
+            pedidoRepositorio.deleteById(idPedido);
+        } catch (Exception e) {
+            System.out.println("Error al eliminar los datos");
+        }
+    }
 
-	@Override
-	public Pedido buscarPedidoId(int idPedido) {
-		try {
-			return pedidoRepositorio.findById(idPedido).get();
-		} catch (Exception e) {
-			System.out.println("Error al editar los datos");
-			return null;
-		}
-	}
+    @Override
+    public Pedido buscarPedidoId(int idPedido) {
+        try {
+            return pedidoRepositorio.findById(idPedido).get();
+        } catch (Exception e) {
+            System.out.println("Error al buscar el pedido por ID");
+            return null;
+        }
+    }
+
+    @Override
+    public List<Pedido> buscarPedidosPorClienteId(int idCliente) {
+        try {
+            return pedidoRepositorio.findByFkClienteIdCliente(idCliente);
+        } catch (Exception e) {
+            System.out.println("Error al buscar pedidos por cliente");
+            return null;
+        }
+    }
 }

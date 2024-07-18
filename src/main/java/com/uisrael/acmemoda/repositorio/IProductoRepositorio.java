@@ -1,9 +1,10 @@
 package com.uisrael.acmemoda.repositorio;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import com.uisrael.acmemoda.modelo.Producto;
 
-public interface IProductoRepositorio extends JpaRepository<Producto, Integer>{
-
+public interface IProductoRepositorio extends JpaRepository<Producto, Integer> {
+    List<Producto> findByFkCategoriaIdCategoria(int idCategoria);
 }

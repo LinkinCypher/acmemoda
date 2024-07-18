@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.uisrael.acmemoda.modelo.Categoria;
 import com.uisrael.acmemoda.modelo.Cliente;
@@ -130,4 +131,17 @@ public class DetalleControlador {
     
     
     
+    @GetMapping("/pedidosPorCliente/{idCliente}")
+    @ResponseBody
+    public List<Pedido> obtenerPedidosPorCliente(@PathVariable int idCliente) {
+        return servicioPedido.buscarPedidosPorClienteId(idCliente);
+    }
+    
+    
+    
+    @GetMapping("/productosPorCategoria/{idCategoria}")
+    @ResponseBody
+    public List<Producto> obtenerProductosPorCategoria(@PathVariable int idCategoria) {
+        return servicioProducto.buscarProductosPorCategoriaId(idCategoria);
+    }
 }
