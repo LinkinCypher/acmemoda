@@ -84,6 +84,7 @@
 														    <tr>
 																<th scope="col">#</th>
 															    <th scope="col">Fecha</th>
+															    <th scope="col">Cliente</th>
 															    <th scope="col">Estado</th>
 																<th scope="col">Editar / Eliminar</th>
 														    </tr>
@@ -92,6 +93,7 @@
 															<tr th:each="pedido: ${lista}">
 															    <td th:text = "${pedido.idPedido}"></td>
 																<td th:text = "${pedido.fecha}"></td>
+																<td th:text = "${pedido.fkCliente.nombre} + ' ' + ${pedido.fkCliente.apellido}"></td>
 																<td th:text = "${pedido.estado}"></td>
 															    <td>
 																	<a 	th:href="@{/editarpedido/}+ ${pedido.idPedido}" 
