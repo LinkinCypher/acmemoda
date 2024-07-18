@@ -88,6 +88,9 @@
 														                           title="Ingrese el nombre" 
 														                           data-toggle="tooltip"
 														                           th:field="*{nombre}"
+														                           pattern="[a-zA-Z\s]+" 
+														                           oninput="this.setCustomValidity('')" 
+														                           oninvalid="this.setCustomValidity('Por favor, ingrese solo letras.')" 
 														                           required>
 														                </div>
 														            </div>
@@ -100,6 +103,9 @@
 														                           title="Ingrese el apellido" 
 														                           data-toggle="tooltip"
 														                           th:field="*{apellido}"
+														                           pattern="[a-zA-Z\s]+" 
+														                           oninput="this.setCustomValidity('')" 
+														                           oninvalid="this.setCustomValidity('Por favor, ingrese solo letras.')" 
 														                           required>
 														                </div>
 														            </div>
@@ -108,12 +114,14 @@
 														        <div class="row mt-3">
 														            <div class="col-md-6">
 														                <div class="input-group">
-														                    <input type="text" 
+														                    <input type="email" 
 														                           class="form-control" 
 														                           placeholder="Correo" 
 														                           title="Ingrese el correo electrónico" 
 														                           data-toggle="tooltip"
 														                           th:field="*{correo}"
+														                           oninput="this.setCustomValidity('')" 
+														                           oninvalid="this.setCustomValidity('Por favor, ingrese un correo válido.')" 
 														                           required>
 														                </div>
 														            </div>
