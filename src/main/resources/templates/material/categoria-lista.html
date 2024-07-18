@@ -94,14 +94,19 @@
 															    <td th:text = "${categoria.idCategoria}"></td>
 																<td th:text = "${categoria.nombre}"></td>
 																<td th:text = "${categoria.descripcion}"></td>
-																<td th:text = "${categoria.estado}"></td>
+																<td>
+																    <label 	class="label label-md" 
+																    		th:classappend="${categoria.estado} ? 'label-primary' : 'label-danger'"
+																           	th:text="${categoria.estado ? 'Activo' : 'Inactivo'}">
+																    </label>
+																</td>
 																<td>
 																	<a 	th:href="@{/editarcategoria/}+ ${categoria.idCategoria}" 
-																		class="btn btn-success btn-xs waves-effect waves-light">
+																		class="btn btn-success btn-sm waves-effect waves-light">
 																		<i class="fa fa-edit"></i>
 																	</a>
 																	<a 	th:href="@{/eliminarcategoria/}+ ${categoria.idCategoria}"
-																		class="btn btn-danger btn-xs waves-effect waves-light"
+																		class="btn btn-danger btn-sm waves-effect waves-light"
 																		onclick="return confirm('¿Esta seguro que desea eliminar?')">
 																		<i class="fa fa-trash"></i>
 																	</a>

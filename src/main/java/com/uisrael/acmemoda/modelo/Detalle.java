@@ -20,7 +20,7 @@ public class Detalle implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCategoria;
+	private int idDetalle;
 	private int cantidad;
 	private boolean estado;
 

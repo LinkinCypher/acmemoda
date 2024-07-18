@@ -78,6 +78,52 @@
 																Crear nuevo Detalle
 															</a>
 														</span>
+														
+														<table class="table">
+														  <thead>
+														    <tr>
+																<th scope="col">#</th>
+																<th scope="col">Pedido</th>
+															    <th scope="col">Cliente</th>
+															    <th scope="col">Categoria</th>
+																<th scope="col">Producto</th>
+																<th scope="col">Cantidad</th>
+																<th scope="col">Costo</th>
+																<th scope="col">Costo Total</th>
+																<th scope="col">Estado</th>
+																<th scope="col">Editar / Eliminar</th>
+														    </tr>
+														  </thead>
+														  <tbody>
+															<tr th:each="detalle: ${lista}">
+															    <td th:text="${detalle.idDetalle}"></td>
+											                    <td th:text="${detalle.fkPedido.fecha}"></td>
+											                    <td th:text="${detalle.fkPedido.fkCliente.nombre} + ' ' + ${detalle.fkPedido.fkCliente.apellido}"></td>
+											                    <td th:text="${detalle.fkProducto.fkCategoria.nombre}"></td>
+											                    <td th:text="${detalle.fkProducto.nombre}"></td>
+											                    <td th:text="${detalle.cantidad}"></td>
+											                    <td th:text="${detalle.fkProducto.costo}"></td>
+											                    <td th:text="${detalle.cantidad * detalle.fkProducto.costo}"></td>
+											                    <td>
+																    <label 	class="label label-md" 
+																    		th:classappend="${detalle.estado} ? 'label-primary' : 'label-danger'"
+																           	th:text="${detalle.estado ? 'Activo' : 'Inactivo'}">
+																    </label>
+																</td>
+															    <td>
+																	<a 	th:href="@{/editardetalle/}+ ${detalle.idDetalle}" 
+																		class="btn btn-success btn-sm waves-effect waves-light">
+																		<i class="fa fa-edit"></i>
+																	</a>
+																	<a 	th:href="@{/eliminardetalle/}+ ${detalle.idDetalle}"
+																		class="btn btn-danger btn-sm waves-effect waves-light"
+																		onclick="return confirm('¿Esta seguro que desea eliminar?')">
+																		<i class="fa fa-trash"></i>
+																	</a>
+																</td>
+														    </tr>
+														  </tbody>
+														</table>
                                                     	
 														
 														<!-- FIN -->

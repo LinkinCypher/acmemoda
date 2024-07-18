@@ -94,14 +94,19 @@
 															    <td th:text = "${pedido.idPedido}"></td>
 																<td th:text = "${pedido.fecha}"></td>
 																<td th:text = "${pedido.fkCliente.nombre} + ' ' + ${pedido.fkCliente.apellido}"></td>
-																<td th:text = "${pedido.estado}"></td>
+																<td>
+																    <label 	class="label label-md" 
+																    		th:classappend="${pedido.estado} ? 'label-primary' : 'label-danger'"
+																           	th:text="${pedido.estado ? 'Activo' : 'Inactivo'}">
+																    </label>
+																</td>
 															    <td>
 																	<a 	th:href="@{/editarpedido/}+ ${pedido.idPedido}" 
-																		class="btn btn-success btn-xs waves-effect waves-light">
+																		class="btn btn-success btn-sm waves-effect waves-light">
 																		<i class="fa fa-edit"></i>
 																	</a>
 																	<a 	th:href="@{/eliminarpedido/}+ ${pedido.idPedido}"
-																		class="btn btn-danger btn-xs waves-effect waves-light"
+																		class="btn btn-danger btn-sm waves-effect waves-light"
 																		onclick="return confirm('¿Esta seguro que desea eliminar?')">
 																		<i class="fa fa-trash"></i>
 																	</a>

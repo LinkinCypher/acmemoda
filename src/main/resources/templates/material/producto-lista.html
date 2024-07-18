@@ -98,14 +98,19 @@
 																<td th:text = "${producto.nombre}"></td>
 																<td th:text = "${producto.descripcion}"></td>
 																<td th:text = "${producto.costo}"></td>
-																<td th:text = "${producto.estado}"></td>
+																<td>
+																    <label 	class="label label-md" 
+																    		th:classappend="${producto.estado} ? 'label-primary' : 'label-danger'"
+																           	th:text="${producto.estado ? 'Activo' : 'Inactivo'}">
+																    </label>
+																</td>
 														    <td>
 																<a 	th:href="@{/editarproducto/}+ ${producto.idProducto}" 
-																	class="btn btn-success btn-xs waves-effect waves-light">
+																	class="btn btn-success btn-sm waves-effect waves-light">
 																	<i class="fa fa-edit"></i>
 																</a>
 																<a 	th:href="@{/eliminarproducto/}+ ${producto.idProducto}"
-																	class="btn btn-danger btn-xs waves-effect waves-light"
+																	class="btn btn-danger btn-sm waves-effect waves-light"
 																	onclick="return confirm('¿Esta seguro que desea eliminar?')">
 																	<i class="fa fa-trash"></i>
 																</a>

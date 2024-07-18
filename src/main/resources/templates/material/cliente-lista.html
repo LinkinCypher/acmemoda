@@ -104,14 +104,19 @@
 																<td th:text = "${cliente.fechaNacimiento}"></td>
 																<td th:text = "${cliente.cedulaIdentidad}"></td>
 																<td th:text = "${cliente.telefono}"></td>
-																<td th:text = "${cliente.estado}"></td>
+																<td>
+																    <label 	class="label label-md" 
+																    		th:classappend="${cliente.estado} ? 'label-primary' : 'label-danger'"
+																           	th:text="${cliente.estado ? 'Activo' : 'Inactivo'}">
+																    </label>
+																</td>
 																<td>
 																	<a 	th:href="@{/editarcliente/}+ ${cliente.idCliente}" 
-																		class="btn btn-success btn-xs waves-effect waves-light">
+																		class="btn btn-success btn-sm waves-effect waves-light">
 																		<i class="fa fa-edit"></i>
 																	</a>
 																	<a 	th:href="@{/eliminarcliente/}+ ${cliente.idCliente}"
-																		class="btn btn-danger btn-xs waves-effect waves-light"
+																		class="btn btn-danger btn-sm waves-effect waves-light"
 																		onclick="return confirm('¿Esta seguro que desea eliminar?')">
 																		<i class="fa fa-trash"></i>
 																	</a>

@@ -45,7 +45,7 @@ public class ProductoControlador {
 	
 	
 	
-	 //Pagina producto-lista
+	// Pagina producto-lista
     @GetMapping("/producto-listar")
 	public String listarProducto(Model model) { 
     	List<Producto> listaProducto = servicioProducto.listarProducto();
@@ -57,7 +57,7 @@ public class ProductoControlador {
     
     
     
-  //Guardar -> producto-registro
+    // Guardar -> producto-registro
     @PostMapping("/insertarproducto")
     public String guardarproducto(@ModelAttribute("nuevoProducto") Producto nuevoProducto) {
     	servicioProducto.insertarProducto(nuevoProducto);
@@ -66,7 +66,7 @@ public class ProductoControlador {
     
     
     
-    //Editar -> producto-registro
+    // Editar -> producto-registro
     @GetMapping("/editarproducto/{idproducto}")
     public String editarProducto(@PathVariable(value="idproducto") int idProducto, Model model) {
     	listaCategoria = servicioCategoria.listarCategoria();
@@ -78,7 +78,7 @@ public class ProductoControlador {
     
     
     
-  //Eliminar -> pedido-lista
+    // Eliminar -> pedido-lista
     @GetMapping("/eliminarproducto/{idproducto}")
     public String eliminarProducto(@PathVariable(value="idproducto") int idProducto, Model model) {
     	servicioProducto.eliminarProducto(idProducto);

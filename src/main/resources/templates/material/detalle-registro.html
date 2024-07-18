@@ -72,9 +72,101 @@
 														
 														
 														<!-- INICIO -->
-
-	                                                    
-														
+														<form th:action="@{/insertardetalle}" th:object="${nuevoDetalle}" class="form-material" method="post">
+												            <div class="card-block tooltip-icon button-list">
+												                <div class="input-group">
+												                    <input type="text" 
+												                           class="form-control" 
+												                           data-toggle="tooltip"
+												                           th:field="*{idDetalle}"
+												                           disabled>
+												                </div>
+												
+												                <div class="row mt-3">
+												                    <!-- Cliente y Pedido -->
+												                    <div class="col-md-6">
+												                        <div>
+												                            <select class="form-select form-control" th:field="*{fkPedido.fkCliente.idCliente}">
+												                                <option selected value="0">Nombre y apellido del cliente</option>
+												                                <option th:each="cliente : ${listaCliente}" th:value="${cliente.idCliente}"
+												                                        th:text="${cliente.nombre} + ' ' + ${cliente.apellido}">
+												                                </option>
+												                            </select>
+												                        </div>
+												                    </div>
+												                    
+												                    <div class="col-md-6">
+												                        <div>
+												                            <select class="form-select form-control" th:field="*{fkPedido.idPedido}">
+												                                <option selected value="0">Seleccionar Pedido</option>
+												                                <option th:each="pedido : ${listaPedido}" th:value="${pedido.idPedido}"
+												                                        th:text="${pedido.fecha}">
+												                                </option>
+												                            </select>
+												                        </div>
+												                    </div>
+												                </div>
+												
+												                <div class="row mt-3">
+												                    <!-- Categoría y Producto -->
+												                    <div class="col-md-6">
+												                        <div>
+												                            <select class="form-select form-control" th:field="*{fkProducto.fkCategoria.idCategoria}">
+												                                <option selected value="0">Nombre de la Categoría</option>
+												                                <option th:each="categoria : ${listaCategoria}" th:value="${categoria.idCategoria}"
+												                                        th:text="${categoria.nombre}">
+												                                </option>
+												                            </select>
+												                        </div>
+												                    </div>
+												                    
+												                    <div class="col-md-6">
+												                        <div>
+												                            <select class="form-select form-control" th:field="*{fkProducto.idProducto}">
+												                                <option selected value="0">Seleccionar Producto</option>
+												                                <option th:each="producto : ${listaProducto}" th:value="${producto.idProducto}"
+												                                        th:text="${producto.nombre}">
+												                                </option>
+												                            </select>
+												                        </div>
+												                    </div>
+												                </div>
+												
+												                <div class="row mt-3">
+												                    <!-- Cantidad -->
+												                    <div class="col-md-6">
+												                        <div class="input-group">
+												                            <input type="number" 
+												                                   class="form-control" 
+												                                   placeholder="Cantidad" 
+												                                   title="Ingrese la cantidad" 
+												                                   data-toggle="tooltip"
+												                                   th:field="*{cantidad}" 
+												                                   min="1"
+												                                   required>
+												                        </div>
+												                    </div>
+												                    
+												                    <!-- Estado -->
+												                    <div class="col-md-6">
+												                        <div class="checkbox-fade fade-in-primary mt-3">
+												                            <input type="checkbox" value="" th:field="*{estado}">
+												                            ¿Está activo?
+												                        </div>
+												                    </div>
+												                </div>
+												                
+												                <hr>
+												                
+												                <button class="btn waves-effect waves-light btn-primary btn-outline-primary" data-type="inverse" data-from="top" data-align="center" data-icon="fa fa-comments">
+												                    <i class="fa fa-save"></i>
+												                    Guardar
+												                </button>
+												                
+												                <!-- Importante para hacer el update (reconoce si es insert o update) -->
+												                <input type="hidden" th:field="*{idDetalle}">
+												            </div>
+												        </form>
 														<!-- FIN -->
 														
 														

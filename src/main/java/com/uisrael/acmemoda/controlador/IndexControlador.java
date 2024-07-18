@@ -14,9 +14,6 @@ public class IndexControlador {
         return "/material/index";
     }
     
-    @GetMapping("/detalle-listar")
-    public String verCategoria() {
-        return "/material/detalle-lista";
-    }
+    
 
 }
