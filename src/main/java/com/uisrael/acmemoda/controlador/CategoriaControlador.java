@@ -47,7 +47,7 @@ public class CategoriaControlador {
     @PostMapping("/insertarcategoria")
     public String guardarcategoria(@ModelAttribute("nuevoCategoria") Categoria nuevoCategoria) {
     	servicioCategoria.insertarCategoria(nuevoCategoria);
-    	return "redirect:/nuevocategoria";
+    	return "redirect:/categoria-listar";
     }
     
     
@@ -68,12 +68,6 @@ public class CategoriaControlador {
     	servicioCategoria.eliminarCategoria(idCategoria);
     	return "redirect:/categoria-listar";
     }
-    
-    
-    
-    
-    
-    
     
     
     

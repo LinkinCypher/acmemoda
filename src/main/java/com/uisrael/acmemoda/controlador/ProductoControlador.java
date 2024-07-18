@@ -61,7 +61,7 @@ public class ProductoControlador {
     @PostMapping("/insertarproducto")
     public String guardarproducto(@ModelAttribute("nuevoProducto") Producto nuevoProducto) {
     	servicioProducto.insertarProducto(nuevoProducto);
-    	return "redirect:/nuevoproducto";
+    	return "redirect:/producto-listar";
     }
     
     

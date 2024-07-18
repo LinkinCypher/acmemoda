@@ -60,7 +60,7 @@ public class PedidoControlador {
     @PostMapping("/insertarpedido")
     public String guardarpedido(@ModelAttribute("nuevoPedido") Pedido nuevoPedido) {
     	servicioPedido.insertarPedido(nuevoPedido);
-    	return "redirect:/nuevopedido";
+    	return "redirect:/pedido-listar";
     }
     
     
